@@ -1,0 +1,79 @@
+{
+  "success": true,
+  "source_record": "<original-scene-directory>/runs/paper_09_full_authorized/native_checkpoint/records/finish_ha05b5c5",
+  "exact_resume_certified": false,
+  "simulation_advanced": false,
+  "native_recovery_performed_here": false,
+  "coupling_forces_reapplied": false,
+  "errors": [],
+  "warnings": [],
+  "writes_started": true,
+  "limitations": [
+    "Rigid FK flags inferred from completed Genesis IPC rigid-post-coupling substep; not exported originally",
+    "No resumed-step equivalence comparison against the original uninterrupted process",
+    "Python task/controller objects and unexported caches are not restored by this helper"
+  ],
+  "fk_flags": {
+    "position": true,
+    "velocity": true,
+    "source": "inferred from Genesis rigid_solver.substep final assignment",
+    "original_flags_exported": false,
+    "mujoco_compatibility": false
+  },
+  "rigid_array_count": 208,
+  "coupling_array_count": 87,
+  "restored_native_frame": 8753,
+  "restored_global_substep": 8753,
+  "per_environment_steps": [
+    8753
+  ],
+  "robot_readback": {
+    "left": {
+      "q_max_error_rad": 0.0,
+      "dq_max_error_rad_s": 0.0,
+      "gain_and_force_limit_errors": {
+        "kp": 0.0,
+        "kv": 0.0,
+        "force_limit_low": 0.0,
+        "force_limit_high": 0.0
+      }
+    },
+    "right": {
+      "q_max_error_rad": 0.0,
+      "dq_max_error_rad_s": 0.0,
+      "gain_and_force_limit_errors": {
+        "kp": 0.0,
+        "kv": 0.0,
+        "force_limit_low": 0.0,
+        "force_limit_high": 0.0
+      }
+    }
+  },
+  "rigid_array_exact_readback": true,
+  "coupling_array_exact_readback": true,
+  "frozen_config_matches": true,
+  "file_hashes_verified": [
+    "rigid_solver_arrays.npz",
+    "rigid_solver_configs.json",
+    "coupling_arrays.npz",
+    "controller_state.npz",
+    "controller.json",
+    "config.json",
+    "simulator_clocks.json",
+    "simulator_clocks.npz"
+  ],
+  "static_config_source": "Fresh identical-config scene; original static objects were exported only as repr",
+  "native_abd_max_error": 0.0,
+  "soft_position_max_errors_m": {
+    "bag": 0.0,
+    "bear": 0.0
+  },
+  "native_fem_history_max_errors": {
+    "q": 0.0,
+    "q_prev": 0.0,
+    "q_v": 0.0
+  },
+  "native_frame": 8753,
+  "state_readback_verified": true,
+  "uninterrupted_step_equivalence_certified": false
+}

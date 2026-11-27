@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-11-27T02:04:26.878514+00:00",
+  "latest_run": "paper_11_direct_release",
+  "status": "release_diagnostic_completed",
+  "release_action_completed": true,
+  "final_vertices_inside_bag": true,
+  "full_task_passed": false,
+  "physical_quality_validated": false,
+  "observed_inverted_tetrahedra_max": 4,
+  "simulation_time_s": 47.56500000000588,
+  "checkpoint_export_success": true,
+  "exact_uninterrupted_resume_certified": false,
+  "result_document": "RELEASE_RESULT_CN.txt"
+}

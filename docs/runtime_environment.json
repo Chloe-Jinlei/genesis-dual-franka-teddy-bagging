@@ -1,0 +1,974 @@
+{
+  "python": "3.12.15 (main, Oct  3 2026, 01:03:07) [Clang 22.1.3 ]",
+  "python_executable": "<original-workspace>/.venv/bin/python",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "libc": [
+    "glibc",
+    "2.39"
+  ],
+  "packages": {
+    "polyscope": {
+      "name": "polyscope",
+      "version": "2.6.1",
+      "distribution_path": "<original-workspace>/teddy_bag_scene/vendor/polyscope-2.6.1.dist-info",
+      "direct_url": null
+    },
+    "huggingface-hub": {
+      "name": "huggingface_hub",
+      "version": "2.4.0",
+      "distribution_path": "<original-workspace>/teddy_bag_scene/vendor/huggingface_hub-2.4.0.dist-info",
+      "direct_url": null
+    },
+    "pyuipc": {
+      "name": "pyuipc",
+      "version": "0.0.29",
+      "distribution_path": "<original-workspace>/teddy_bag_scene/vendor/pyuipc-0.0.29.dist-info",
+      "direct_url": null
+    },
+    "fastjsonschema": {
+      "name": "fastjsonschema",
+      "version": "2.22.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/fastjsonschema-2.22.2.dist-info",
+      "direct_url": null
+    },
+    "gs-madrona": {
+      "name": "gs-madrona",
+      "version": "0.0.10",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/gs_madrona-0.0.10.dist-info",
+      "direct_url": null
+    },
+    "tifffile": {
+      "name": "tifffile",
+      "version": "2026.9.20",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/tifffile-2026.9.20.dist-info",
+      "direct_url": null
+    },
+    "dracopy": {
+      "name": "DracoPy",
+      "version": "2.1.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/dracopy-2.1.0.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cuda-cupti": {
+      "name": "nvidia-cuda-cupti",
+      "version": "13.0.85",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cuda_cupti-13.0.85.dist-info",
+      "direct_url": null
+    },
+    "charset-normalizer": {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/charset_normalizer-3.5.2.dist-info",
+      "direct_url": null
+    },
+    "decorator": {
+      "name": "decorator",
+      "version": "5.3.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/decorator-5.3.1.dist-info",
+      "direct_url": null
+    },
+    "pysplashsurf": {
+      "name": "pysplashsurf",
+      "version": "0.14.1.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pysplashsurf-0.14.1.0.dist-info",
+      "direct_url": null
+    },
+    "ipywidgets": {
+      "name": "ipywidgets",
+      "version": "8.1.9",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/ipywidgets-8.1.9.dist-info",
+      "direct_url": null
+    },
+    "imageio-ffmpeg": {
+      "name": "imageio-ffmpeg",
+      "version": "0.6.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/imageio_ffmpeg-0.6.0.dist-info",
+      "direct_url": null
+    },
+    "av": {
+      "name": "av",
+      "version": "19.0.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/av-19.0.1.dist-info",
+      "direct_url": null
+    },
+    "pygltflib": {
+      "name": "pygltflib",
+      "version": "1.16.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pygltflib-1.16.0.dist-info",
+      "direct_url": null
+    },
+    "python-dateutil": {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/python_dateutil-2.9.0.post0.dist-info",
+      "direct_url": null
+    },
+    "attrs": {
+      "name": "attrs",
+      "version": "26.1.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/attrs-26.1.0.dist-info",
+      "direct_url": null
+    },
+    "plotly": {
+      "name": "plotly",
+      "version": "5.24.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/plotly-5.24.1.dist-info",
+      "direct_url": null
+    },
+    "pillow": {
+      "name": "pillow",
+      "version": "11.3.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pillow-11.3.0.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cudnn-cu13": {
+      "name": "nvidia-cudnn-cu13",
+      "version": "9.24.0.43",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cudnn_cu13-9.24.0.43.dist-info",
+      "direct_url": null
+    },
+    "rich": {
+      "name": "rich",
+      "version": "15.0.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/rich-15.0.0.dist-info",
+      "direct_url": null
+    },
+    "libigl": {
+      "name": "libigl",
+      "version": "2.6.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/libigl-2.6.3.dist-info",
+      "direct_url": null
+    },
+    "markdown-it-py": {
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/markdown_it_py-4.2.0.dist-info",
+      "direct_url": null
+    },
+    "prompt-toolkit": {
+      "name": "prompt_toolkit",
+      "version": "3.0.53",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/prompt_toolkit-3.0.53.dist-info",
+      "direct_url": null
+    },
+    "freetype-py": {
+      "name": "freetype-py",
+      "version": "2.5.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/freetype_py-2.5.1.dist-info",
+      "direct_url": null
+    },
+    "marshmallow": {
+      "name": "marshmallow",
+      "version": "3.26.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/marshmallow-3.26.2.dist-info",
+      "direct_url": null
+    },
+    "retrying": {
+      "name": "retrying",
+      "version": "1.4.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/retrying-1.4.2.dist-info",
+      "direct_url": null
+    },
+    "requests": {
+      "name": "requests",
+      "version": "2.34.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/requests-2.34.2.dist-info",
+      "direct_url": null
+    },
+    "etils": {
+      "name": "etils",
+      "version": "1.14.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/etils-1.14.0.dist-info",
+      "direct_url": null
+    },
+    "pygments": {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pygments-2.21.0.dist-info",
+      "direct_url": null
+    },
+    "mujoco": {
+      "name": "mujoco",
+      "version": "3.15.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/mujoco-3.15.0.dist-info",
+      "direct_url": null
+    },
+    "mpmath": {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/mpmath-1.3.0.dist-info",
+      "direct_url": null
+    },
+    "contourpy": {
+      "name": "contourpy",
+      "version": "1.4.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/contourpy-1.4.0.dist-info",
+      "direct_url": null
+    },
+    "nvidia-nvjitlink": {
+      "name": "nvidia-nvjitlink",
+      "version": "13.4.92",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_nvjitlink-13.4.92.dist-info",
+      "direct_url": null
+    },
+    "pyyaml": {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pyyaml-6.0.3.dist-info",
+      "direct_url": null
+    },
+    "pydantic": {
+      "name": "pydantic",
+      "version": "2.13.5",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pydantic-2.13.5.dist-info",
+      "direct_url": null
+    },
+    "wcwidth": {
+      "name": "wcwidth",
+      "version": "0.9.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/wcwidth-0.9.2.dist-info",
+      "direct_url": null
+    },
+    "torch": {
+      "name": "torch",
+      "version": "2.14.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/torch-2.14.0.dist-info",
+      "direct_url": null
+    },
+    "numba": {
+      "name": "numba",
+      "version": "0.68.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/numba-0.68.0.dist-info",
+      "direct_url": null
+    },
+    "imgui-bundle": {
+      "name": "imgui-bundle",
+      "version": "1.92.900",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/imgui_bundle-1.92.900.dist-info",
+      "direct_url": null
+    },
+    "configargparse": {
+      "name": "ConfigArgParse",
+      "version": "1.8.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/configargparse-1.8.0.dist-info",
+      "direct_url": null
+    },
+    "moviepy": {
+      "name": "moviepy",
+      "version": "2.2.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/moviepy-2.2.1.dist-info",
+      "direct_url": null
+    },
+    "open3d": {
+      "name": "open3d",
+      "version": "0.20.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/open3d-0.20.0.dist-info",
+      "direct_url": null
+    },
+    "matplotlib": {
+      "name": "matplotlib",
+      "version": "3.11.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/matplotlib-3.11.2.dist-info",
+      "direct_url": null
+    },
+    "comm": {
+      "name": "comm",
+      "version": "0.2.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/comm-0.2.3.dist-info",
+      "direct_url": null
+    },
+    "pyopengl": {
+      "name": "PyOpenGL",
+      "version": "3.1.10",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pyopengl-3.1.10.dist-info",
+      "direct_url": null
+    },
+    "kiwisolver": {
+      "name": "kiwisolver",
+      "version": "1.5.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/kiwisolver-1.5.1.dist-info",
+      "direct_url": null
+    },
+    "pycollada": {
+      "name": "pycollada",
+      "version": "0.9.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pycollada-0.9.3.dist-info",
+      "direct_url": null
+    },
+    "genesis-world": {
+      "name": "genesis-world",
+      "version": "1.4.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/genesis_world-1.4.3.dist-info",
+      "direct_url": "{\"url\":\"file://<original-workspace>/genesis-world\",\"dir_info\":{\"editable\":true}}"
+    },
+    "fsspec": {
+      "name": "fsspec",
+      "version": "2026.9.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/fsspec-2026.9.0.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cuda-nvrtc-cu12": {
+      "name": "nvidia-cuda-nvrtc-cu12",
+      "version": "12.9.86",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cuda_nvrtc_cu12-12.9.86.dist-info",
+      "direct_url": null
+    },
+    "widgetsnbextension": {
+      "name": "widgetsnbextension",
+      "version": "4.0.16",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/widgetsnbextension-4.0.16.dist-info",
+      "direct_url": null
+    },
+    "triton": {
+      "name": "triton",
+      "version": "3.8.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/triton-3.8.0.dist-info",
+      "direct_url": null
+    },
+    "dataclasses-json": {
+      "name": "dataclasses-json",
+      "version": "0.6.7",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/dataclasses_json-0.6.7.dist-info",
+      "direct_url": null
+    },
+    "pycparser": {
+      "name": "pycparser",
+      "version": "3.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pycparser-3.0.dist-info",
+      "direct_url": null
+    },
+    "referencing": {
+      "name": "referencing",
+      "version": "0.37.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/referencing-0.37.0.dist-info",
+      "direct_url": null
+    },
+    "jupyter-core": {
+      "name": "jupyter_core",
+      "version": "5.9.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/jupyter_core-5.9.1.dist-info",
+      "direct_url": null
+    },
+    "janus": {
+      "name": "janus",
+      "version": "2.0.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/janus-2.0.0.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cusolver": {
+      "name": "nvidia-cusolver",
+      "version": "12.0.4.66",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cusolver-12.0.4.66.dist-info",
+      "direct_url": null
+    },
+    "nbformat": {
+      "name": "nbformat",
+      "version": "5.11.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nbformat-5.11.1.dist-info",
+      "direct_url": null
+    },
+    "urllib3": {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/urllib3-2.8.0.dist-info",
+      "direct_url": null
+    },
+    "cycler": {
+      "name": "cycler",
+      "version": "0.12.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/cycler-0.12.1.dist-info",
+      "direct_url": null
+    },
+    "pure-eval": {
+      "name": "pure_eval",
+      "version": "0.2.4",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pure_eval-0.2.4.dist-info",
+      "direct_url": null
+    },
+    "dill": {
+      "name": "dill",
+      "version": "0.4.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/dill-0.4.1.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cublas": {
+      "name": "nvidia-cublas",
+      "version": "13.1.1.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cublas-13.1.1.3.dist-info",
+      "direct_url": null
+    },
+    "zipp": {
+      "name": "zipp",
+      "version": "4.1.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/zipp-4.1.1.dist-info",
+      "direct_url": null
+    },
+    "setuptools": {
+      "name": "setuptools",
+      "version": "84.0.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/setuptools-84.0.0.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cusparselt-cu13": {
+      "name": "nvidia-cusparselt-cu13",
+      "version": "0.8.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cusparselt_cu13-0.8.1.dist-info",
+      "direct_url": null
+    },
+    "filelock": {
+      "name": "filelock",
+      "version": "4.0.12",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/filelock-4.0.12.dist-info",
+      "direct_url": null
+    },
+    "nvidia-nccl-cu13": {
+      "name": "nvidia-nccl-cu13",
+      "version": "2.30.7",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_nccl_cu13-2.30.7.dist-info",
+      "direct_url": null
+    },
+    "matplotlib-inline": {
+      "name": "matplotlib-inline",
+      "version": "0.2.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/matplotlib_inline-0.2.2.dist-info",
+      "direct_url": null
+    },
+    "mypy-extensions": {
+      "name": "mypy_extensions",
+      "version": "1.1.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/mypy_extensions-1.1.0.dist-info",
+      "direct_url": null
+    },
+    "typing-inspection": {
+      "name": "typing-inspection",
+      "version": "0.4.4",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/typing_inspection-0.4.4.dist-info",
+      "direct_url": null
+    },
+    "traitlets": {
+      "name": "traitlets",
+      "version": "5.16.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/traitlets-5.16.1.dist-info",
+      "direct_url": null
+    },
+    "pybind11-global": {
+      "name": "pybind11-global",
+      "version": "3.1.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pybind11_global-3.1.0.dist-info",
+      "direct_url": null
+    },
+    "click": {
+      "name": "click",
+      "version": "8.5.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/click-8.5.0.dist-info",
+      "direct_url": null
+    },
+    "ptyprocess": {
+      "name": "ptyprocess",
+      "version": "0.7.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/ptyprocess-0.7.0.dist-info",
+      "direct_url": null
+    },
+    "tetgen": {
+      "name": "tetgen",
+      "version": "0.8.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/tetgen-0.8.2.dist-info",
+      "direct_url": null
+    },
+    "blinker": {
+      "name": "blinker",
+      "version": "1.9.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/blinker-1.9.0.dist-info",
+      "direct_url": null
+    },
+    "pyparsing": {
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pyparsing-3.3.3.dist-info",
+      "direct_url": null
+    },
+    "asttokens": {
+      "name": "asttokens",
+      "version": "3.0.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/asttokens-3.0.2.dist-info",
+      "direct_url": null
+    },
+    "nvidia-nvshmem-cu13": {
+      "name": "nvidia-nvshmem-cu13",
+      "version": "3.4.5",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_nvshmem_cu13-3.4.5.dist-info",
+      "direct_url": null
+    },
+    "importlib-metadata": {
+      "name": "importlib_metadata",
+      "version": "9.0.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/importlib_metadata-9.0.1.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cuda-nvrtc": {
+      "name": "nvidia-cuda-nvrtc",
+      "version": "13.0.88",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cuda_nvrtc-13.0.88.dist-info",
+      "direct_url": null
+    },
+    "typing-extensions": {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info",
+      "direct_url": null
+    },
+    "annotated-types": {
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/annotated_types-0.8.0.dist-info",
+      "direct_url": null
+    },
+    "vtk": {
+      "name": "vtk",
+      "version": "9.7.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/vtk-9.7.1.dist-info",
+      "direct_url": null
+    },
+    "llvmlite": {
+      "name": "llvmlite",
+      "version": "0.50.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/llvmlite-0.50.0.dist-info",
+      "direct_url": null
+    },
+    "fast-simplification": {
+      "name": "fast_simplification",
+      "version": "0.2.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/fast_simplification-0.2.0.dist-info",
+      "direct_url": null
+    },
+    "certifi": {
+      "name": "certifi",
+      "version": "2026.7.22",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/certifi-2026.7.22.dist-info",
+      "direct_url": null
+    },
+    "psutil": {
+      "name": "psutil",
+      "version": "7.2.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/psutil-7.2.2.dist-info",
+      "direct_url": null
+    },
+    "pexpect": {
+      "name": "pexpect",
+      "version": "4.9.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pexpect-4.9.0.dist-info",
+      "direct_url": null
+    },
+    "nest-asyncio": {
+      "name": "nest-asyncio",
+      "version": "1.6.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nest_asyncio-1.6.0.dist-info",
+      "direct_url": null
+    },
+    "platformdirs": {
+      "name": "platformdirs",
+      "version": "4.12.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/platformdirs-4.12.3.dist-info",
+      "direct_url": null
+    },
+    "stack-data": {
+      "name": "stack-data",
+      "version": "0.6.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/stack_data-0.6.3.dist-info",
+      "direct_url": null
+    },
+    "executing": {
+      "name": "executing",
+      "version": "2.2.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/executing-2.2.1.dist-info",
+      "direct_url": null
+    },
+    "scipy": {
+      "name": "scipy",
+      "version": "1.18.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/scipy-1.18.1.dist-info",
+      "direct_url": null
+    },
+    "nvidia-nvjitlink-cu12": {
+      "name": "nvidia-nvjitlink-cu12",
+      "version": "12.9.86",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_nvjitlink_cu12-12.9.86.dist-info",
+      "direct_url": null
+    },
+    "colorama": {
+      "name": "colorama",
+      "version": "0.4.6",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/colorama-0.4.6.dist-info",
+      "direct_url": null
+    },
+    "jinja2": {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/jinja2-3.1.6.dist-info",
+      "direct_url": null
+    },
+    "opencv-python": {
+      "name": "opencv-python",
+      "version": "5.0.0.93",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/opencv_python-5.0.0.93.dist-info",
+      "direct_url": null
+    },
+    "scikit-image": {
+      "name": "scikit-image",
+      "version": "0.26.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/scikit_image-0.26.0.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cusparse": {
+      "name": "nvidia-cusparse",
+      "version": "12.6.3.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cusparse-12.6.3.3.dist-info",
+      "direct_url": null
+    },
+    "pymeshlab": {
+      "name": "pymeshlab",
+      "version": "2025.7.post1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pymeshlab-2025.7.post1.dist-info",
+      "direct_url": null
+    },
+    "glfw": {
+      "name": "glfw",
+      "version": "2.10.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/glfw-2.10.2.dist-info",
+      "direct_url": null
+    },
+    "websockets": {
+      "name": "websockets",
+      "version": "17.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/websockets-17.2.dist-info",
+      "direct_url": null
+    },
+    "quadrants": {
+      "name": "quadrants",
+      "version": "1.3.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/quadrants-1.3.3.dist-info",
+      "direct_url": null
+    },
+    "jsonschema": {
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/jsonschema-4.26.0.dist-info",
+      "direct_url": null
+    },
+    "pyglet": {
+      "name": "pyglet",
+      "version": "2.1.16",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pyglet-2.1.16.dist-info",
+      "direct_url": null
+    },
+    "rtree": {
+      "name": "rtree",
+      "version": "1.4.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/rtree-1.4.1.dist-info",
+      "direct_url": null
+    },
+    "packaging": {
+      "name": "packaging",
+      "version": "26.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/packaging-26.3.dist-info",
+      "direct_url": null
+    },
+    "frozendict": {
+      "name": "frozendict",
+      "version": "2.4.7",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/frozendict-2.4.7.dist-info",
+      "direct_url": null
+    },
+    "nvidia-nvtx": {
+      "name": "nvidia-nvtx",
+      "version": "13.0.85",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_nvtx-13.0.85.dist-info",
+      "direct_url": null
+    },
+    "proglog": {
+      "name": "proglog",
+      "version": "0.1.12",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/proglog-0.1.12.dist-info",
+      "direct_url": null
+    },
+    "openexr": {
+      "name": "OpenEXR",
+      "version": "3.5.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/openexr-3.5.2.dist-info",
+      "direct_url": null
+    },
+    "flask": {
+      "name": "Flask",
+      "version": "3.1.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/flask-3.1.3.dist-info",
+      "direct_url": null
+    },
+    "nvidia-curand": {
+      "name": "nvidia-curand",
+      "version": "10.4.0.35",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_curand-10.4.0.35.dist-info",
+      "direct_url": null
+    },
+    "xacro": {
+      "name": "xacro",
+      "version": "2.1.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/xacro-2.1.1.dist-info",
+      "direct_url": null
+    },
+    "python-dotenv": {
+      "name": "python-dotenv",
+      "version": "1.2.4",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/python_dotenv-1.2.4.dist-info",
+      "direct_url": null
+    },
+    "dash": {
+      "name": "dash",
+      "version": "4.4.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/dash-4.4.1.dist-info",
+      "direct_url": null
+    },
+    "pygel3d": {
+      "name": "PyGEL3D",
+      "version": "0.8.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pygel3d-0.8.2.dist-info",
+      "direct_url": null
+    },
+    "z3-solver": {
+      "name": "z3-solver",
+      "version": "4.15.4.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/z3_solver-4.15.4.0.dist-info",
+      "direct_url": null
+    },
+    "wrapt": {
+      "name": "wrapt",
+      "version": "2.5.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/wrapt-2.5.0.dist-info",
+      "direct_url": null
+    },
+    "werkzeug": {
+      "name": "Werkzeug",
+      "version": "3.1.9",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/werkzeug-3.1.9.dist-info",
+      "direct_url": null
+    },
+    "rpds-py": {
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/rpds_py-2026.9.1.dist-info",
+      "direct_url": null
+    },
+    "networkx": {
+      "name": "networkx",
+      "version": "3.7",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/networkx-3.7.dist-info",
+      "direct_url": null
+    },
+    "trimesh": {
+      "name": "trimesh",
+      "version": "5.1.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/trimesh-5.1.1.dist-info",
+      "direct_url": null
+    },
+    "py-cpuinfo": {
+      "name": "py-cpuinfo",
+      "version": "9.0.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/py_cpuinfo-9.0.0.dist-info",
+      "direct_url": null
+    },
+    "tqdm": {
+      "name": "tqdm",
+      "version": "4.70.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/tqdm-4.70.1.dist-info",
+      "direct_url": null
+    },
+    "mdurl": {
+      "name": "mdurl",
+      "version": "0.1.2",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/mdurl-0.1.2.dist-info",
+      "direct_url": null
+    },
+    "parso": {
+      "name": "parso",
+      "version": "0.8.7",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/parso-0.8.7.dist-info",
+      "direct_url": null
+    },
+    "deprecated": {
+      "name": "Deprecated",
+      "version": "3.0.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/deprecated-3.0.0.dist-info",
+      "direct_url": null
+    },
+    "cuda-toolkit": {
+      "name": "cuda-toolkit",
+      "version": "13.0.3.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/cuda_toolkit-13.0.3.0.dist-info",
+      "direct_url": null
+    },
+    "cuda-bindings": {
+      "name": "cuda-bindings",
+      "version": "13.4.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/cuda_bindings-13.4.3.dist-info",
+      "direct_url": null
+    },
+    "numpy": {
+      "name": "numpy",
+      "version": "2.5.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/numpy-2.5.3.dist-info",
+      "direct_url": null
+    },
+    "tenacity": {
+      "name": "tenacity",
+      "version": "9.1.4",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/tenacity-9.1.4.dist-info",
+      "direct_url": null
+    },
+    "imageio": {
+      "name": "ImageIO",
+      "version": "2.38.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/imageio-2.38.0.dist-info",
+      "direct_url": null
+    },
+    "pydantic-core": {
+      "name": "pydantic_core",
+      "version": "2.46.5",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pydantic_core-2.46.5.dist-info",
+      "direct_url": null
+    },
+    "absl-py": {
+      "name": "absl-py",
+      "version": "2.5.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/absl_py-2.5.0.dist-info",
+      "direct_url": null
+    },
+    "typing-inspect": {
+      "name": "typing-inspect",
+      "version": "0.9.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/typing_inspect-0.9.0.dist-info",
+      "direct_url": null
+    },
+    "markupsafe": {
+      "name": "MarkupSafe",
+      "version": "3.0.4",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/markupsafe-3.0.4.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cufft": {
+      "name": "nvidia-cufft",
+      "version": "12.0.0.61",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cufft-12.0.0.61.dist-info",
+      "direct_url": null
+    },
+    "cffi": {
+      "name": "cffi",
+      "version": "2.1.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/cffi-2.1.1.dist-info",
+      "direct_url": null
+    },
+    "coacd": {
+      "name": "coacd",
+      "version": "1.0.14",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/coacd-1.0.14.dist-info",
+      "direct_url": null
+    },
+    "itsdangerous": {
+      "name": "itsdangerous",
+      "version": "2.2.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/itsdangerous-2.2.0.dist-info",
+      "direct_url": null
+    },
+    "jedi": {
+      "name": "jedi",
+      "version": "0.20.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/jedi-0.20.0.dist-info",
+      "direct_url": null
+    },
+    "cuda-pathfinder": {
+      "name": "cuda-pathfinder",
+      "version": "1.8.3",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/cuda_pathfinder-1.8.3.dist-info",
+      "direct_url": null
+    },
+    "sympy": {
+      "name": "sympy",
+      "version": "1.14.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/sympy-1.14.0.dist-info",
+      "direct_url": null
+    },
+    "pybind11": {
+      "name": "pybind11",
+      "version": "3.1.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/pybind11-3.1.0.dist-info",
+      "direct_url": null
+    },
+    "lazy-loader": {
+      "name": "lazy-loader",
+      "version": "0.6",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/lazy_loader-0.6.dist-info",
+      "direct_url": null
+    },
+    "six": {
+      "name": "six",
+      "version": "1.17.0",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/six-1.17.0.dist-info",
+      "direct_url": null
+    },
+    "ipython-pygments-lexers": {
+      "name": "ipython_pygments_lexers",
+      "version": "1.1.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/ipython_pygments_lexers-1.1.1.dist-info",
+      "direct_url": null
+    },
+    "fonttools": {
+      "name": "fonttools",
+      "version": "4.66.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/fonttools-4.66.1.dist-info",
+      "direct_url": null
+    },
+    "idna": {
+      "name": "idna",
+      "version": "3.20",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/idna-3.20.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cuda-runtime": {
+      "name": "nvidia-cuda-runtime",
+      "version": "13.0.96",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cuda_runtime-13.0.96.dist-info",
+      "direct_url": null
+    },
+    "ipython": {
+      "name": "ipython",
+      "version": "9.17.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/ipython-9.17.1.dist-info",
+      "direct_url": null
+    },
+    "jsonschema-specifications": {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/jsonschema_specifications-2025.9.1.dist-info",
+      "direct_url": null
+    },
+    "jupyterlab-widgets": {
+      "name": "jupyterlab_widgets",
+      "version": "3.0.17",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/jupyterlab_widgets-3.0.17.dist-info",
+      "direct_url": null
+    },
+    "nvidia-cufile": {
+      "name": "nvidia-cufile",
+      "version": "1.15.1.6",
+      "distribution_path": "<original-workspace>/.venv/lib/python3.12/site-packages/nvidia_cufile-1.15.1.6.dist-info",
+      "direct_url": null
+    }
+  },
+  "vendor_packages": {
+    "polyscope": "2.6.1",
+    "huggingface-hub": "2.4.0",
+    "pyuipc": "0.0.29"
+  },
+  "torch": {
+    "version": "2.14.0+cu130",
+    "compiled_cuda": "13.0"
+  }
+}

@@ -1,0 +1,2063 @@
+{
+  "status": "stopped",
+  "task_passed": false,
+  "requested_task": "full",
+  "exact_midpoint_resume_implemented": false,
+  "physical_object_motion": "native FEM/contact only",
+  "physics": {
+    "solver": "Genesis 1.4.3 + libuipc 0.0.29, IPC contact, FEM shell/volume",
+    "coordinate_frame": {
+      "enabled": true,
+      "physics_origin_m": [
+        -0.1,
+        0.0,
+        0.9
+      ],
+      "mapping": "physics_position = canonical_world_position - physics_origin_m",
+      "planning_and_saved_observations": "canonical world coordinates",
+      "rotations_forces_local_geometry_and_materials_changed": false,
+      "runtime_state_repositioning": false,
+      "native_floor": {
+        "verified": true,
+        "native_object": "rigid_plane_5_0",
+        "geometries": [
+          {
+            "geometry": "current",
+            "physics_point_m": [
+              0.1,
+              0.0,
+              -0.9
+            ],
+            "canonical_point_m": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "geometry": "rest",
+            "physics_point_m": [
+              0.1,
+              0.0,
+              -0.9
+            ],
+            "canonical_point_m": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "scope": "Initial native plane point only, before World.init"
+      }
+    },
+    "genesis_backend": "cuda",
+    "ipc_backend": "cuda",
+    "bag_vertices": 961,
+    "bear_vertices": 1450,
+    "bear_tetrahedra": 5486,
+    "no_fixed_soft_vertices": true,
+    "no_soft_grasp_attachments": true,
+    "grasp_model": "finite-force finger PD and IPC friction, no ideal attachment",
+    "robot_soft_contact_links": "all collision links",
+    "rigid_contact_solver": "Genesis rigid solver with scene-local restoration of IPC-delegated collision pairs",
+    "soft_environment_contact": "tabletop, legs, mounts and floor participate in native IPC contact",
+    "other_arm_links_soft_contact": true,
+    "two_way_contact_coupling": true,
+    "material_experimentally_calibrated": false,
+    "bear_material_scope": "homogeneous compressible elastic filling approximation; no separate textile skin",
+    "bag_material_scope": "Isotropic kraft-paper elastic shell with connected rectangular sides, bottom and handles; uncalibrated; no permanent creases or tearing",
+    "handle_material_scope": "Paper ribbon handles, same material and thickness as body",
+    "cloth_thickness_convention": "IPC thickness is a radius; physical thickness is twice the configured value",
+    "bag": {
+      "position": [
+        -0.18,
+        0.22,
+        0.742
+      ],
+      "E": 800000000.0,
+      "nu": 0.3,
+      "rho": 800.0,
+      "thickness": 0.000125,
+      "bending_stiffness": 0.0011446886446886447,
+      "friction_mu": 0.45,
+      "mesh": "paper_bag.obj",
+      "height_m": 0.3
+    },
+    "bear": {
+      "position": [
+        0.27,
+        -0.25,
+        0.742
+      ],
+      "E": 18000.0,
+      "nu": 0.28,
+      "rho": 100.0,
+      "friction_mu": 0.65,
+      "mesh": "bear_uniform_coarse_s663.obj",
+      "nobisect": true,
+      "mindihedral": 15,
+      "minratio": 1.3,
+      "maxvolume": 1.1657369879999996e-06
+    },
+    "simulation": {
+      "dt": 0.005,
+      "substeps": 1,
+      "precision": "64",
+      "contact_distance": 0.001,
+      "contact_resistance": 10000000.0,
+      "correct_stc_reaction": true,
+      "backend": "cuda",
+      "material_model": "NeoHookeanShell",
+      "line_search_iterations": 32,
+      "ipc_fem_preconditioner": "mas",
+      "physics_origin_m": [
+        -0.1,
+        0,
+        0.9
+      ]
+    }
+  },
+  "material_readback": {
+    "enabled": true,
+    "verified": true,
+    "calibrated": false,
+    "material": "uncalibrated effective isotropic elastic approximation to dry kraft paper",
+    "native_membrane": "NeoHookeanShell",
+    "native_membrane_uid": 11,
+    "native_bending": "DiscreteShellBending",
+    "native_bending_uid": 17,
+    "scope": "Scene-local native constitution selection before IPC World initialization",
+    "engine_installation_modified": false,
+    "global_classes_modified": false,
+    "soft_state_mutations": false,
+    "attachments_or_fixed_soft_vertices": false,
+    "independent_cloth_shear_override": false,
+    "constants": {
+      "young_modulus_pa": 800000000.0,
+      "poisson_ratio": 0.3,
+      "density_kg_m3": 800.0,
+      "full_thickness_m": 0.00025,
+      "ipc_one_sided_radius_m": 0.000125,
+      "lame_lambda_pa": 263736263.73626372,
+      "shear_mu_pa": 307692307.6923077,
+      "bending_stiffness_nm": 0.0011446886446886447,
+      "areal_density_kg_m2": 0.2,
+      "small_strain_extensional_stiffness_n_m": 219780.21978021978,
+      "small_strain_shear_stiffness_n_m": 76923.07692307692
+    },
+    "friction_coefficient_input": 0.45,
+    "calibration_status": "Engineering assumptions; reference photo provides no measured material parameters",
+    "rest_shape": "Manufactured open rectangular form; existing folds belong to initial rest geometry",
+    "handles": "Same shell material as bag body; flat paper strip approximation, not twisted cord",
+    "source_notes": "MATERIAL_NOTES.txt",
+    "limitations": [
+      "Uncalibrated effective isotropic paper; no orthotropic fibre directions, yielding, tearing or new permanent creases",
+      "No moisture dependence, viscoelastic relaxation, calibrated damping, glue delamination or air pressure",
+      "2D isotropic neo-Hookean law matches small-strain plane stress; finite-strain 3D plane-stress reduction is not solved"
+    ],
+    "entities": [
+      {
+        "entity_index": 0,
+        "environment": 0,
+        "verified": true,
+        "checks": {
+          "neo_hookean_shell_uid_11": true,
+          "only_discrete_shell_bending_uid_17": true,
+          "native_density_matches": true,
+          "native_radius_is_half_physical_thickness": true,
+          "native_lame_lambda_matches_plane_stress": true,
+          "native_shear_mu_matches_isotropic_law": true,
+          "native_bending_matches_physical_plate_value": true,
+          "no_fixed_vertices": true,
+          "all_vertices_dynamic": true,
+          "positive_finite_surface_area": true,
+          "native_volume_uses_full_thickness": true
+        },
+        "constitution_uid": [
+          11
+        ],
+        "extra_constitution_uids": [
+          17
+        ],
+        "vertices": 961,
+        "triangles": 1800,
+        "surface_area_m2": 0.3510356669045945,
+        "native_density_kg_m3": [
+          800.0
+        ],
+        "native_radius_range_m": [
+          0.000125,
+          0.000125
+        ],
+        "native_lame_lambda_range_pa": [
+          263736263.73626375,
+          263736263.73626375
+        ],
+        "native_shear_mu_range_pa": [
+          307692307.6923077,
+          307692307.6923077
+        ],
+        "native_bending_range_nm": [
+          0.0011446886446886447,
+          0.0011446886446886447
+        ],
+        "native_rest_volume_m3": 8.775891672614861e-05,
+        "native_rest_mass_kg": 0.07020713338091888,
+        "expected_rest_mass_kg": 0.0702071333809189,
+        "fixed_vertex_count": 0
+      }
+    ]
+  },
+  "initialization": {
+    "method": "Actual qpos after rigid solver build, before IPC geometry build",
+    "neutral_joint_reference_modified": false,
+    "verified": true,
+    "maximum_initial_ipc_genesis_translation_error_m": 0.0
+  },
+  "native_solver": {
+    "enabled": true,
+    "verified": true,
+    "requested_fem_preconditioner": "mas",
+    "scope": "One native configuration attribute before World.init",
+    "engine_installation_modified": false,
+    "global_classes_modified": false,
+    "physics_or_tolerances_changed": false,
+    "performance_validated": false,
+    "interpretation": "MAS preconditions all nonempty FEM bodies; setup and application overhead can outweigh reduced PCG iterations",
+    "setting": "linear_system/fem_preconditioner",
+    "previous": "diag",
+    "selected": "mas",
+    "readback": "mas",
+    "all_other_native_configuration_attributes_unchanged": true,
+    "protected_native_configuration_sha256": "622fb3397dce154d33ebb70a35fe5836699f5e5b7f91c05d9ad82735d767fada",
+    "protected_readback": {
+      "dt": 0.005,
+      "linear_system/solver": "fused_pcg",
+      "linear_system/tol_rate": 0.0001,
+      "linear_system/use_cuda_graph": 1,
+      "linear_system/check_interval": 5,
+      "newton/max_iter": 100,
+      "newton/velocity_tol": 0.005,
+      "newton/transrate_tol": 0.1,
+      "newton/ccd_tol": 1.0,
+      "newton/semi_implicit/enable": 0,
+      "line_search/max_iter": 32,
+      "contact/d_hat": 0.001,
+      "contact/eps_velocity": 0.001,
+      "contact/friction/enable": 1,
+      "contact/enable": 1,
+      "sanity_check/enable": 1
+    },
+    "native_configuration_before": {
+      "cfl/enable": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "cfl/enable"
+      },
+      "collision_detection/method": {
+        "attribute": {
+          "default_value": "info_stackless_bvh",
+          "values": [
+            "info_stackless_bvh"
+          ]
+        },
+        "name": "collision_detection/method"
+      },
+      "contact/adaptive/init_kappa": {
+        "attribute": {
+          "default_value": 1000000000.0,
+          "values": [
+            1000000000.0
+          ]
+        },
+        "name": "contact/adaptive/init_kappa"
+      },
+      "contact/adaptive/kappa_eval_scale": {
+        "attribute": {
+          "default_value": 1e-16,
+          "values": [
+            1e-16
+          ]
+        },
+        "name": "contact/adaptive/kappa_eval_scale"
+      },
+      "contact/adaptive/max_kappa": {
+        "attribute": {
+          "default_value": 100000000000.0,
+          "values": [
+            100000000000.0
+          ]
+        },
+        "name": "contact/adaptive/max_kappa"
+      },
+      "contact/adaptive/min_kappa": {
+        "attribute": {
+          "default_value": 100000000.0,
+          "values": [
+            100000000.0
+          ]
+        },
+        "name": "contact/adaptive/min_kappa"
+      },
+      "contact/al-ipc/alpha_lower_bound": {
+        "attribute": {
+          "default_value": 1e-06,
+          "values": [
+            1e-06
+          ]
+        },
+        "name": "contact/al-ipc/alpha_lower_bound"
+      },
+      "contact/al-ipc/decay_factor": {
+        "attribute": {
+          "default_value": 0.3,
+          "values": [
+            0.3
+          ]
+        },
+        "name": "contact/al-ipc/decay_factor"
+      },
+      "contact/al-ipc/mu_scale_abd": {
+        "attribute": {
+          "default_value": 100000.0,
+          "values": [
+            100000.0
+          ]
+        },
+        "name": "contact/al-ipc/mu_scale_abd"
+      },
+      "contact/al-ipc/mu_scale_diag_norm": {
+        "attribute": {
+          "default_value": 0.1,
+          "values": [
+            0.1
+          ]
+        },
+        "name": "contact/al-ipc/mu_scale_diag_norm"
+      },
+      "contact/al-ipc/mu_scale_fem": {
+        "attribute": {
+          "default_value": 50000000.0,
+          "values": [
+            50000000.0
+          ]
+        },
+        "name": "contact/al-ipc/mu_scale_fem"
+      },
+      "contact/al-ipc/mu_scale_mode": {
+        "attribute": {
+          "default_value": "per_vertex",
+          "values": [
+            "per_vertex"
+          ]
+        },
+        "name": "contact/al-ipc/mu_scale_mode"
+      },
+      "contact/al-ipc/toi_threshold": {
+        "attribute": {
+          "default_value": 0.1,
+          "values": [
+            0.1
+          ]
+        },
+        "name": "contact/al-ipc/toi_threshold"
+      },
+      "contact/constitution": {
+        "attribute": {
+          "default_value": "ipc",
+          "values": [
+            "ipc"
+          ]
+        },
+        "name": "contact/constitution"
+      },
+      "contact/d_hat": {
+        "attribute": {
+          "default_value": 0.01,
+          "values": [
+            0.001
+          ]
+        },
+        "name": "contact/d_hat"
+      },
+      "contact/d_hat_relative": {
+        "attribute": {
+          "default_value": 0.0,
+          "values": [
+            0.0
+          ]
+        },
+        "name": "contact/d_hat_relative"
+      },
+      "contact/enable": {
+        "attribute": {
+          "default_value": 1,
+          "values": [
+            1
+          ]
+        },
+        "name": "contact/enable"
+      },
+      "contact/eps_velocity": {
+        "attribute": {
+          "default_value": 0.01,
+          "values": [
+            0.001
+          ]
+        },
+        "name": "contact/eps_velocity"
+      },
+      "contact/eps_velocity_relative": {
+        "attribute": {
+          "default_value": 0.0,
+          "values": [
+            0.0
+          ]
+        },
+        "name": "contact/eps_velocity_relative"
+      },
+      "contact/friction/enable": {
+        "attribute": {
+          "default_value": 1,
+          "values": [
+            1
+          ]
+        },
+        "name": "contact/friction/enable"
+      },
+      "diff_sim/enable": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "diff_sim/enable"
+      },
+      "dt": {
+        "attribute": {
+          "default_value": 0.01,
+          "values": [
+            0.005
+          ]
+        },
+        "name": "dt"
+      },
+      "extras/debug/dump_linear_pcg": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "extras/debug/dump_linear_pcg"
+      },
+      "extras/debug/dump_linear_system": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "extras/debug/dump_linear_system"
+      },
+      "extras/debug/dump_mas_matrices": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "extras/debug/dump_mas_matrices"
+      },
+      "extras/debug/dump_surface": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "extras/debug/dump_surface"
+      },
+      "extras/strict_mode/enable": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "extras/strict_mode/enable"
+      },
+      "gravity": {
+        "attribute": {
+          "default_value": [
+            [
+              0.0
+            ],
+            [
+              -9.8
+            ],
+            [
+              0.0
+            ]
+          ],
+          "values": [
+            [
+              [
+                0.0
+              ],
+              [
+                0.0
+              ],
+              [
+                -9.81
+              ]
+            ]
+          ]
+        },
+        "name": "gravity"
+      },
+      "integrator/type": {
+        "attribute": {
+          "default_value": "bdf1",
+          "values": [
+            "bdf1"
+          ]
+        },
+        "name": "integrator/type"
+      },
+      "line_search/max_iter": {
+        "attribute": {
+          "default_value": 8,
+          "values": [
+            32
+          ]
+        },
+        "name": "line_search/max_iter"
+      },
+      "line_search/report_energy": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "line_search/report_energy"
+      },
+      "linear_system/check_interval": {
+        "attribute": {
+          "default_value": 5,
+          "values": [
+            5
+          ]
+        },
+        "name": "linear_system/check_interval"
+      },
+      "linear_system/fem_preconditioner": {
+        "attribute": {
+          "default_value": "diag",
+          "values": [
+            "diag"
+          ]
+        },
+        "name": "linear_system/fem_preconditioner"
+      },
+      "linear_system/solver": {
+        "attribute": {
+          "default_value": "fused_pcg",
+          "values": [
+            "fused_pcg"
+          ]
+        },
+        "name": "linear_system/solver"
+      },
+      "linear_system/tol_rate": {
+        "attribute": {
+          "default_value": 0.001,
+          "values": [
+            0.0001
+          ]
+        },
+        "name": "linear_system/tol_rate"
+      },
+      "linear_system/use_cuda_graph": {
+        "attribute": {
+          "default_value": 1,
+          "values": [
+            1
+          ]
+        },
+        "name": "linear_system/use_cuda_graph"
+      },
+      "newton/ccd_tol": {
+        "attribute": {
+          "default_value": 1.0,
+          "values": [
+            1.0
+          ]
+        },
+        "name": "newton/ccd_tol"
+      },
+      "newton/max_iter": {
+        "attribute": {
+          "default_value": 1024,
+          "values": [
+            100
+          ]
+        },
+        "name": "newton/max_iter"
+      },
+      "newton/min_iter": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "newton/min_iter"
+      },
+      "newton/semi_implicit/K_min": {
+        "attribute": {
+          "default_value": 6,
+          "values": [
+            6
+          ]
+        },
+        "name": "newton/semi_implicit/K_min"
+      },
+      "newton/semi_implicit/beta_tol": {
+        "attribute": {
+          "default_value": 0.001,
+          "values": [
+            0.001
+          ]
+        },
+        "name": "newton/semi_implicit/beta_tol"
+      },
+      "newton/semi_implicit/enable": {
+        "attribute": {
+          "default_value": 1,
+          "values": [
+            0
+          ]
+        },
+        "name": "newton/semi_implicit/enable"
+      },
+      "newton/transrate_tol": {
+        "attribute": {
+          "default_value": 0.1,
+          "values": [
+            0.1
+          ]
+        },
+        "name": "newton/transrate_tol"
+      },
+      "newton/use_adaptive_tol": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "newton/use_adaptive_tol"
+      },
+      "newton/velocity_tol": {
+        "attribute": {
+          "default_value": 0.05,
+          "values": [
+            0.005
+          ]
+        },
+        "name": "newton/velocity_tol"
+      },
+      "newton/velocity_tol_relative": {
+        "attribute": {
+          "default_value": 0.0,
+          "values": [
+            0.0
+          ]
+        },
+        "name": "newton/velocity_tol_relative"
+      },
+      "sanity_check/enable": {
+        "attribute": {
+          "default_value": 1,
+          "values": [
+            1
+          ]
+        },
+        "name": "sanity_check/enable"
+      },
+      "sanity_check/mode": {
+        "attribute": {
+          "default_value": "normal",
+          "values": [
+            "normal"
+          ]
+        },
+        "name": "sanity_check/mode"
+      }
+    },
+    "native_configuration_after": {
+      "cfl/enable": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "cfl/enable"
+      },
+      "collision_detection/method": {
+        "attribute": {
+          "default_value": "info_stackless_bvh",
+          "values": [
+            "info_stackless_bvh"
+          ]
+        },
+        "name": "collision_detection/method"
+      },
+      "contact/adaptive/init_kappa": {
+        "attribute": {
+          "default_value": 1000000000.0,
+          "values": [
+            1000000000.0
+          ]
+        },
+        "name": "contact/adaptive/init_kappa"
+      },
+      "contact/adaptive/kappa_eval_scale": {
+        "attribute": {
+          "default_value": 1e-16,
+          "values": [
+            1e-16
+          ]
+        },
+        "name": "contact/adaptive/kappa_eval_scale"
+      },
+      "contact/adaptive/max_kappa": {
+        "attribute": {
+          "default_value": 100000000000.0,
+          "values": [
+            100000000000.0
+          ]
+        },
+        "name": "contact/adaptive/max_kappa"
+      },
+      "contact/adaptive/min_kappa": {
+        "attribute": {
+          "default_value": 100000000.0,
+          "values": [
+            100000000.0
+          ]
+        },
+        "name": "contact/adaptive/min_kappa"
+      },
+      "contact/al-ipc/alpha_lower_bound": {
+        "attribute": {
+          "default_value": 1e-06,
+          "values": [
+            1e-06
+          ]
+        },
+        "name": "contact/al-ipc/alpha_lower_bound"
+      },
+      "contact/al-ipc/decay_factor": {
+        "attribute": {
+          "default_value": 0.3,
+          "values": [
+            0.3
+          ]
+        },
+        "name": "contact/al-ipc/decay_factor"
+      },
+      "contact/al-ipc/mu_scale_abd": {
+        "attribute": {
+          "default_value": 100000.0,
+          "values": [
+            100000.0
+          ]
+        },
+        "name": "contact/al-ipc/mu_scale_abd"
+      },
+      "contact/al-ipc/mu_scale_diag_norm": {
+        "attribute": {
+          "default_value": 0.1,
+          "values": [
+            0.1
+          ]
+        },
+        "name": "contact/al-ipc/mu_scale_diag_norm"
+      },
+      "contact/al-ipc/mu_scale_fem": {
+        "attribute": {
+          "default_value": 50000000.0,
+          "values": [
+            50000000.0
+          ]
+        },
+        "name": "contact/al-ipc/mu_scale_fem"
+      },
+      "contact/al-ipc/mu_scale_mode": {
+        "attribute": {
+          "default_value": "per_vertex",
+          "values": [
+            "per_vertex"
+          ]
+        },
+        "name": "contact/al-ipc/mu_scale_mode"
+      },
+      "contact/al-ipc/toi_threshold": {
+        "attribute": {
+          "default_value": 0.1,
+          "values": [
+            0.1
+          ]
+        },
+        "name": "contact/al-ipc/toi_threshold"
+      },
+      "contact/constitution": {
+        "attribute": {
+          "default_value": "ipc",
+          "values": [
+            "ipc"
+          ]
+        },
+        "name": "contact/constitution"
+      },
+      "contact/d_hat": {
+        "attribute": {
+          "default_value": 0.01,
+          "values": [
+            0.001
+          ]
+        },
+        "name": "contact/d_hat"
+      },
+      "contact/d_hat_relative": {
+        "attribute": {
+          "default_value": 0.0,
+          "values": [
+            0.0
+          ]
+        },
+        "name": "contact/d_hat_relative"
+      },
+      "contact/enable": {
+        "attribute": {
+          "default_value": 1,
+          "values": [
+            1
+          ]
+        },
+        "name": "contact/enable"
+      },
+      "contact/eps_velocity": {
+        "attribute": {
+          "default_value": 0.01,
+          "values": [
+            0.001
+          ]
+        },
+        "name": "contact/eps_velocity"
+      },
+      "contact/eps_velocity_relative": {
+        "attribute": {
+          "default_value": 0.0,
+          "values": [
+            0.0
+          ]
+        },
+        "name": "contact/eps_velocity_relative"
+      },
+      "contact/friction/enable": {
+        "attribute": {
+          "default_value": 1,
+          "values": [
+            1
+          ]
+        },
+        "name": "contact/friction/enable"
+      },
+      "diff_sim/enable": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "diff_sim/enable"
+      },
+      "dt": {
+        "attribute": {
+          "default_value": 0.01,
+          "values": [
+            0.005
+          ]
+        },
+        "name": "dt"
+      },
+      "extras/debug/dump_linear_pcg": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "extras/debug/dump_linear_pcg"
+      },
+      "extras/debug/dump_linear_system": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "extras/debug/dump_linear_system"
+      },
+      "extras/debug/dump_mas_matrices": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "extras/debug/dump_mas_matrices"
+      },
+      "extras/debug/dump_surface": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "extras/debug/dump_surface"
+      },
+      "extras/strict_mode/enable": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "extras/strict_mode/enable"
+      },
+      "gravity": {
+        "attribute": {
+          "default_value": [
+            [
+              0.0
+            ],
+            [
+              -9.8
+            ],
+            [
+              0.0
+            ]
+          ],
+          "values": [
+            [
+              [
+                0.0
+              ],
+              [
+                0.0
+              ],
+              [
+                -9.81
+              ]
+            ]
+          ]
+        },
+        "name": "gravity"
+      },
+      "integrator/type": {
+        "attribute": {
+          "default_value": "bdf1",
+          "values": [
+            "bdf1"
+          ]
+        },
+        "name": "integrator/type"
+      },
+      "line_search/max_iter": {
+        "attribute": {
+          "default_value": 8,
+          "values": [
+            32
+          ]
+        },
+        "name": "line_search/max_iter"
+      },
+      "line_search/report_energy": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "line_search/report_energy"
+      },
+      "linear_system/check_interval": {
+        "attribute": {
+          "default_value": 5,
+          "values": [
+            5
+          ]
+        },
+        "name": "linear_system/check_interval"
+      },
+      "linear_system/fem_preconditioner": {
+        "attribute": {
+          "default_value": "diag",
+          "values": [
+            "mas"
+          ]
+        },
+        "name": "linear_system/fem_preconditioner"
+      },
+      "linear_system/solver": {
+        "attribute": {
+          "default_value": "fused_pcg",
+          "values": [
+            "fused_pcg"
+          ]
+        },
+        "name": "linear_system/solver"
+      },
+      "linear_system/tol_rate": {
+        "attribute": {
+          "default_value": 0.001,
+          "values": [
+            0.0001
+          ]
+        },
+        "name": "linear_system/tol_rate"
+      },
+      "linear_system/use_cuda_graph": {
+        "attribute": {
+          "default_value": 1,
+          "values": [
+            1
+          ]
+        },
+        "name": "linear_system/use_cuda_graph"
+      },
+      "newton/ccd_tol": {
+        "attribute": {
+          "default_value": 1.0,
+          "values": [
+            1.0
+          ]
+        },
+        "name": "newton/ccd_tol"
+      },
+      "newton/max_iter": {
+        "attribute": {
+          "default_value": 1024,
+          "values": [
+            100
+          ]
+        },
+        "name": "newton/max_iter"
+      },
+      "newton/min_iter": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "newton/min_iter"
+      },
+      "newton/semi_implicit/K_min": {
+        "attribute": {
+          "default_value": 6,
+          "values": [
+            6
+          ]
+        },
+        "name": "newton/semi_implicit/K_min"
+      },
+      "newton/semi_implicit/beta_tol": {
+        "attribute": {
+          "default_value": 0.001,
+          "values": [
+            0.001
+          ]
+        },
+        "name": "newton/semi_implicit/beta_tol"
+      },
+      "newton/semi_implicit/enable": {
+        "attribute": {
+          "default_value": 1,
+          "values": [
+            0
+          ]
+        },
+        "name": "newton/semi_implicit/enable"
+      },
+      "newton/transrate_tol": {
+        "attribute": {
+          "default_value": 0.1,
+          "values": [
+            0.1
+          ]
+        },
+        "name": "newton/transrate_tol"
+      },
+      "newton/use_adaptive_tol": {
+        "attribute": {
+          "default_value": 0,
+          "values": [
+            0
+          ]
+        },
+        "name": "newton/use_adaptive_tol"
+      },
+      "newton/velocity_tol": {
+        "attribute": {
+          "default_value": 0.05,
+          "values": [
+            0.005
+          ]
+        },
+        "name": "newton/velocity_tol"
+      },
+      "newton/velocity_tol_relative": {
+        "attribute": {
+          "default_value": 0.0,
+          "values": [
+            0.0
+          ]
+        },
+        "name": "newton/velocity_tol_relative"
+      },
+      "sanity_check/enable": {
+        "attribute": {
+          "default_value": 1,
+          "values": [
+            1
+          ]
+        },
+        "name": "sanity_check/enable"
+      },
+      "sanity_check/mode": {
+        "attribute": {
+          "default_value": "normal",
+          "values": [
+            "normal"
+          ]
+        },
+        "name": "sanity_check/mode"
+      }
+    }
+  },
+  "rigid_contact": {
+    "enabled": true,
+    "verified": true,
+    "method": "Scene-local Collider subclass; original Genesis pair filters with temporary delegation tags hidden",
+    "engine_installation_modified": false,
+    "global_classes_modified": false,
+    "native_ipc_rigid_rigid_contact": false,
+    "native_ipc_rigid_ground_contact": false,
+    "materials_restored": true,
+    "before": {
+      "total_geometry_pairs": 0,
+      "geometry_pairs_by_entity_pair": {}
+    },
+    "after": {
+      "total_geometry_pairs": 1270,
+      "geometry_pairs_by_entity_pair": {
+        "left_franka | tabletop": 22,
+        "right_franka | tabletop": 22,
+        "left_franka | leg_-0.75_-0.5": 22,
+        "leg_-0.75_-0.5 | right_franka": 22,
+        "left_franka | leg_-0.75_0.5": 22,
+        "leg_-0.75_0.5 | right_franka": 22,
+        "left_franka | leg_0.75_-0.5": 22,
+        "leg_0.75_-0.5 | right_franka": 22,
+        "left_franka | leg_0.75_0.5": 22,
+        "leg_0.75_0.5 | right_franka": 22,
+        "floor | left_franka": 22,
+        "floor | right_franka": 22,
+        "left_franka | left_mount": 22,
+        "left_mount | right_franka": 22,
+        "left_franka | left_franka": 195,
+        "left_franka | right_franka": 528,
+        "left_franka | right_mount": 22,
+        "right_franka | right_mount": 22,
+        "right_franka | right_franka": 195
+      }
+    },
+    "required_entity_pairs": [
+      "floor | left_franka",
+      "floor | right_franka",
+      "left_franka | left_mount",
+      "left_franka | leg_-0.75_-0.5",
+      "left_franka | leg_-0.75_0.5",
+      "left_franka | leg_0.75_-0.5",
+      "left_franka | leg_0.75_0.5",
+      "left_franka | right_franka",
+      "left_franka | right_mount",
+      "left_franka | tabletop",
+      "left_mount | right_franka",
+      "leg_-0.75_-0.5 | right_franka",
+      "leg_-0.75_0.5 | right_franka",
+      "leg_0.75_-0.5 | right_franka",
+      "leg_0.75_0.5 | right_franka",
+      "right_franka | right_mount",
+      "right_franka | tabletop"
+    ],
+    "all_original_pairs_retained": true,
+    "restored_delegation_modes": [
+      "ipc_only",
+      "ipc_only",
+      "ipc_only",
+      "ipc_only",
+      "ipc_only",
+      "ipc_only",
+      "ipc_only",
+      "two_way_soft_constraint",
+      "ipc_only",
+      "two_way_soft_constraint"
+    ]
+  },
+  "latest_checkpoint": {
+    "success": true,
+    "label": "finish",
+    "exact_resume_certified": false,
+    "restore_implemented": false,
+    "simulation_advanced": false,
+    "physical_state_mutated": false,
+    "errors": [],
+    "warnings": [],
+    "created_utc": "2026-11-27T01:52:55.172524+00:00",
+    "record_directory": "<original-scene-directory>/runs/paper_09_full_authorized/native_checkpoint/records/finish_ha05b5c5",
+    "native_frame": 8753,
+    "time_s": 43.76500000000394,
+    "controller_active_command_recorded": true,
+    "controller_active_plan_recorded": true,
+    "coupling": {
+      "array_keys": [
+        "links_mass",
+        "links_inertia_i",
+        "ipc_transforms",
+        "aim_transforms",
+        "out_forces",
+        "out_torques"
+      ],
+      "links": [
+        {
+          "entity": "tabletop",
+          "link": "box_baselink",
+          "index": 0
+        },
+        {
+          "entity": "leg_-0.75_-0.5",
+          "link": "box_baselink",
+          "index": 1
+        },
+        {
+          "entity": "leg_-0.75_0.5",
+          "link": "box_baselink",
+          "index": 2
+        },
+        {
+          "entity": "leg_0.75_-0.5",
+          "link": "box_baselink",
+          "index": 3
+        },
+        {
+          "entity": "leg_0.75_0.5",
+          "link": "box_baselink",
+          "index": 4
+        },
+        {
+          "entity": "left_mount",
+          "link": "box_baselink",
+          "index": 6
+        },
+        {
+          "entity": "left_franka",
+          "link": "link0",
+          "index": 7
+        },
+        {
+          "entity": "left_franka",
+          "link": "link1",
+          "index": 8
+        },
+        {
+          "entity": "left_franka",
+          "link": "link2",
+          "index": 9
+        },
+        {
+          "entity": "left_franka",
+          "link": "link3",
+          "index": 10
+        },
+        {
+          "entity": "left_franka",
+          "link": "link4",
+          "index": 11
+        },
+        {
+          "entity": "left_franka",
+          "link": "link5",
+          "index": 12
+        },
+        {
+          "entity": "left_franka",
+          "link": "link6",
+          "index": 13
+        },
+        {
+          "entity": "left_franka",
+          "link": "link7",
+          "index": 14
+        },
+        {
+          "entity": "left_franka",
+          "link": "left_finger",
+          "index": 16
+        },
+        {
+          "entity": "left_franka",
+          "link": "right_finger",
+          "index": 17
+        },
+        {
+          "entity": "right_mount",
+          "link": "box_baselink",
+          "index": 18
+        },
+        {
+          "entity": "right_franka",
+          "link": "link0",
+          "index": 19
+        },
+        {
+          "entity": "right_franka",
+          "link": "link1",
+          "index": 20
+        },
+        {
+          "entity": "right_franka",
+          "link": "link2",
+          "index": 21
+        },
+        {
+          "entity": "right_franka",
+          "link": "link3",
+          "index": 22
+        },
+        {
+          "entity": "right_franka",
+          "link": "link4",
+          "index": 23
+        },
+        {
+          "entity": "right_franka",
+          "link": "link5",
+          "index": 24
+        },
+        {
+          "entity": "right_franka",
+          "link": "link6",
+          "index": 25
+        },
+        {
+          "entity": "right_franka",
+          "link": "link7",
+          "index": 26
+        },
+        {
+          "entity": "right_franka",
+          "link": "left_finger",
+          "index": 28
+        },
+        {
+          "entity": "right_franka",
+          "link": "right_finger",
+          "index": 29
+        }
+      ],
+      "additional_arrays": [
+        "abd_aim_transforms_link_0",
+        "abd_aim_transforms_link_1",
+        "abd_aim_transforms_link_2",
+        "abd_aim_transforms_link_3",
+        "abd_aim_transforms_link_4",
+        "abd_aim_transforms_link_6",
+        "abd_aim_transforms_link_7",
+        "abd_aim_transforms_link_8",
+        "abd_aim_transforms_link_9",
+        "abd_aim_transforms_link_10",
+        "abd_aim_transforms_link_11",
+        "abd_aim_transforms_link_12",
+        "abd_aim_transforms_link_13",
+        "abd_aim_transforms_link_14",
+        "abd_aim_transforms_link_16",
+        "abd_aim_transforms_link_17",
+        "abd_aim_transforms_link_18",
+        "abd_aim_transforms_link_19",
+        "abd_aim_transforms_link_20",
+        "abd_aim_transforms_link_21",
+        "abd_aim_transforms_link_22",
+        "abd_aim_transforms_link_23",
+        "abd_aim_transforms_link_24",
+        "abd_aim_transforms_link_25",
+        "abd_aim_transforms_link_26",
+        "abd_aim_transforms_link_28",
+        "abd_aim_transforms_link_29",
+        "abd_link_0_env_0_transform",
+        "abd_link_0_env_0_velocity",
+        "abd_link_1_env_0_transform",
+        "abd_link_1_env_0_velocity",
+        "abd_link_2_env_0_transform",
+        "abd_link_2_env_0_velocity",
+        "abd_link_3_env_0_transform",
+        "abd_link_3_env_0_velocity",
+        "abd_link_4_env_0_transform",
+        "abd_link_4_env_0_velocity",
+        "abd_link_6_env_0_transform",
+        "abd_link_6_env_0_velocity",
+        "abd_link_7_env_0_transform",
+        "abd_link_7_env_0_velocity",
+        "abd_link_8_env_0_transform",
+        "abd_link_8_env_0_velocity",
+        "abd_link_9_env_0_transform",
+        "abd_link_9_env_0_velocity",
+        "abd_link_10_env_0_transform",
+        "abd_link_10_env_0_velocity",
+        "abd_link_11_env_0_transform",
+        "abd_link_11_env_0_velocity",
+        "abd_link_12_env_0_transform",
+        "abd_link_12_env_0_velocity",
+        "abd_link_13_env_0_transform",
+        "abd_link_13_env_0_velocity",
+        "abd_link_14_env_0_transform",
+        "abd_link_14_env_0_velocity",
+        "abd_link_16_env_0_transform",
+        "abd_link_16_env_0_velocity",
+        "abd_link_17_env_0_transform",
+        "abd_link_17_env_0_velocity",
+        "abd_link_18_env_0_transform",
+        "abd_link_18_env_0_velocity",
+        "abd_link_19_env_0_transform",
+        "abd_link_19_env_0_velocity",
+        "abd_link_20_env_0_transform",
+        "abd_link_20_env_0_velocity",
+        "abd_link_21_env_0_transform",
+        "abd_link_21_env_0_velocity",
+        "abd_link_22_env_0_transform",
+        "abd_link_22_env_0_velocity",
+        "abd_link_23_env_0_transform",
+        "abd_link_23_env_0_velocity",
+        "abd_link_24_env_0_transform",
+        "abd_link_24_env_0_velocity",
+        "abd_link_25_env_0_transform",
+        "abd_link_25_env_0_velocity",
+        "abd_link_26_env_0_transform",
+        "abd_link_26_env_0_velocity",
+        "abd_link_28_env_0_transform",
+        "abd_link_28_env_0_velocity",
+        "abd_link_29_env_0_transform",
+        "abd_link_29_env_0_velocity"
+      ]
+    },
+    "rigid_solver": {
+      "exported": true,
+      "array_count": 208,
+      "array_names": [
+        "collider_state.contact_cache.normal",
+        "collider_state.contact_cache.penetration",
+        "collider_state.contact_data.force",
+        "collider_state.contact_data.friction",
+        "collider_state.contact_data.friction_rolling",
+        "collider_state.contact_data.friction_torsional",
+        "collider_state.contact_data.geom_a",
+        "collider_state.contact_data.geom_b",
+        "collider_state.contact_data.link_a",
+        "collider_state.contact_data.link_b",
+        "collider_state.contact_data.normal",
+        "collider_state.contact_data.pair_idx",
+        "collider_state.contact_data.penetration",
+        "collider_state.contact_data.pos",
+        "collider_state.contact_data.sol_params",
+        "collider_state.contact_sort_idx",
+        "collider_state.first_time",
+        "collider_state.n_contacts",
+        "collider_state.n_contacts_hibernated",
+        "collider_state.sort_buffer.i_g",
+        "collider_state.sort_buffer.is_max",
+        "collider_state.sort_buffer.value",
+        "constraint_state.active",
+        "constraint_state.efc_force",
+        "constraint_state.is_warmstart",
+        "constraint_state.island.hibernated_next_link",
+        "constraint_state.island.is_hibernated",
+        "constraint_state.n_constraints",
+        "constraint_state.n_constraints_cone",
+        "constraint_state.n_constraints_equality",
+        "constraint_state.n_constraints_frictionloss",
+        "constraint_state.qacc",
+        "constraint_state.qacc_ws",
+        "constraint_state.qd_n_equalities",
+        "constraint_state.qfrc_constraint",
+        "dyn_info.dofs.act_bias",
+        "dyn_info.dofs.act_gain",
+        "dyn_info.dofs.armature",
+        "dyn_info.dofs.damping",
+        "dyn_info.dofs.dof_length",
+        "dyn_info.dofs.entity_idx",
+        "dyn_info.dofs.force_range",
+        "dyn_info.dofs.frictionloss",
+        "dyn_info.dofs.invweight",
+        "dyn_info.dofs.limit",
+        "dyn_info.dofs.motion_ang",
+        "dyn_info.dofs.motion_vel",
+        "dyn_info.dofs.stiffness",
+        "dyn_info.entities.dof_end",
+        "dyn_info.entities.dof_start",
+        "dyn_info.entities.geom_end",
+        "dyn_info.entities.geom_start",
+        "dyn_info.entities.gravity_compensation",
+        "dyn_info.entities.is_local_collision_mask",
+        "dyn_info.entities.link_end",
+        "dyn_info.entities.link_start",
+        "dyn_info.entities.n_dofs",
+        "dyn_info.entities.n_geoms",
+        "dyn_info.entities.n_links",
+        "dyn_info.equalities.eq_data",
+        "dyn_info.equalities.eq_obj1id",
+        "dyn_info.equalities.eq_obj2id",
+        "dyn_info.equalities.eq_type",
+        "dyn_info.equalities.sol_params",
+        "dyn_info.geoms.center",
+        "dyn_info.geoms.conaffinity",
+        "dyn_info.geoms.contype",
+        "dyn_info.geoms.coup_friction",
+        "dyn_info.geoms.coup_restitution",
+        "dyn_info.geoms.coup_softness",
+        "dyn_info.geoms.data",
+        "dyn_info.geoms.edge_end",
+        "dyn_info.geoms.edge_num",
+        "dyn_info.geoms.edge_start",
+        "dyn_info.geoms.face_end",
+        "dyn_info.geoms.face_num",
+        "dyn_info.geoms.face_start",
+        "dyn_info.geoms.friction",
+        "dyn_info.geoms.friction_rolling",
+        "dyn_info.geoms.friction_torsional",
+        "dyn_info.geoms.is_convex",
+        "dyn_info.geoms.is_decomposed",
+        "dyn_info.geoms.is_fixed",
+        "dyn_info.geoms.is_hollow",
+        "dyn_info.geoms.link_idx",
+        "dyn_info.geoms.needs_coup",
+        "dyn_info.geoms.pos",
+        "dyn_info.geoms.quat",
+        "dyn_info.geoms.sol_params",
+        "dyn_info.geoms.type",
+        "dyn_info.geoms.vert_end",
+        "dyn_info.geoms.vert_num",
+        "dyn_info.geoms.vert_start",
+        "dyn_info.geoms.verts_state_end",
+        "dyn_info.geoms.verts_state_start",
+        "dyn_info.joints.dof_end",
+        "dyn_info.joints.dof_start",
+        "dyn_info.joints.n_dofs",
+        "dyn_info.joints.pos",
+        "dyn_info.joints.q_end",
+        "dyn_info.joints.q_start",
+        "dyn_info.joints.sol_params",
+        "dyn_info.joints.type",
+        "dyn_info.links.dof_end",
+        "dyn_info.links.dof_start",
+        "dyn_info.links.entity_idx",
+        "dyn_info.links.geom_end",
+        "dyn_info.links.geom_start",
+        "dyn_info.links.inertial_i",
+        "dyn_info.links.inertial_mass",
+        "dyn_info.links.inertial_pos",
+        "dyn_info.links.inertial_quat",
+        "dyn_info.links.invweight",
+        "dyn_info.links.is_fixed",
+        "dyn_info.links.joint_end",
+        "dyn_info.links.joint_start",
+        "dyn_info.links.n_dofs",
+        "dyn_info.links.parent_idx",
+        "dyn_info.links.pos",
+        "dyn_info.links.q_end",
+        "dyn_info.links.q_start",
+        "dyn_info.links.quat",
+        "dyn_info.links.root_idx",
+        "dyn_info.links.vgeom_end",
+        "dyn_info.links.vgeom_start",
+        "dyn_state.dofs.acc",
+        "dyn_state.dofs.acc_smooth",
+        "dyn_state.dofs.acc_smooth_bw",
+        "dyn_state.dofs.cdof_ang",
+        "dyn_state.dofs.cdof_vel",
+        "dyn_state.dofs.cdofd_ang",
+        "dyn_state.dofs.cdofd_vel",
+        "dyn_state.dofs.ctrl_force",
+        "dyn_state.dofs.ctrl_mode",
+        "dyn_state.dofs.ctrl_pos",
+        "dyn_state.dofs.ctrl_vel",
+        "dyn_state.dofs.f_ang",
+        "dyn_state.dofs.f_vel",
+        "dyn_state.dofs.force",
+        "dyn_state.dofs.is_hibernated",
+        "dyn_state.dofs.pos",
+        "dyn_state.dofs.qf_applied",
+        "dyn_state.dofs.qf_bias",
+        "dyn_state.dofs.qf_constraint",
+        "dyn_state.dofs.qf_passive",
+        "dyn_state.dofs.qf_smooth",
+        "dyn_state.dofs.vel",
+        "dyn_state.entities.is_hibernated",
+        "dyn_state.fixed_verts.pos",
+        "dyn_state.free_verts.pos",
+        "dyn_state.geoms.aabb_max",
+        "dyn_state.geoms.aabb_min",
+        "dyn_state.geoms.friction_ratio",
+        "dyn_state.geoms.is_hibernated",
+        "dyn_state.geoms.pos",
+        "dyn_state.geoms.quat",
+        "dyn_state.geoms.verts_updated",
+        "dyn_state.joints.xanchor",
+        "dyn_state.joints.xaxis",
+        "dyn_state.links.awake_steps",
+        "dyn_state.links.cacc_ang",
+        "dyn_state.links.cacc_lin",
+        "dyn_state.links.cd_ang",
+        "dyn_state.links.cd_ang_bw",
+        "dyn_state.links.cd_vel",
+        "dyn_state.links.cd_vel_bw",
+        "dyn_state.links.cdd_ang",
+        "dyn_state.links.cdd_vel",
+        "dyn_state.links.cfrc_ang",
+        "dyn_state.links.cfrc_applied_ang",
+        "dyn_state.links.cfrc_applied_vel",
+        "dyn_state.links.cfrc_coupling_ang",
+        "dyn_state.links.cfrc_coupling_vel",
+        "dyn_state.links.cfrc_vel",
+        "dyn_state.links.cinr_inertial",
+        "dyn_state.links.cinr_mass",
+        "dyn_state.links.cinr_pos",
+        "dyn_state.links.cinr_quat",
+        "dyn_state.links.contact_force",
+        "dyn_state.links.crb_inertial",
+        "dyn_state.links.crb_mass",
+        "dyn_state.links.crb_pos",
+        "dyn_state.links.crb_quat",
+        "dyn_state.links.i_pos",
+        "dyn_state.links.i_pos_bw",
+        "dyn_state.links.i_quat",
+        "dyn_state.links.is_constrained",
+        "dyn_state.links.is_hibernated",
+        "dyn_state.links.mass_sum",
+        "dyn_state.links.pos",
+        "dyn_state.links.pos_bw",
+        "dyn_state.links.quat",
+        "dyn_state.links.quat_bw",
+        "dyn_state.links.root_COM",
+        "dyn_state.links.root_COM_bw",
+        "dyn_state.vgeoms.pos",
+        "dyn_state.vgeoms.quat",
+        "dyn_state.vverts.pos",
+        "errno",
+        "rigid_info.gravity",
+        "rigid_info.links_T",
+        "rigid_info.mass_mat",
+        "rigid_info.mass_mat_D_inv",
+        "rigid_info.mass_mat_L",
+        "rigid_info.meaninertia",
+        "rigid_info.n_awake_dofs",
+        "rigid_info.qpos",
+        "rigid_info.qpos0"
+      ],
+      "restoration_tested": false,
+      "scope": "Installed solver checkpoint arrays; includes available declared state/scratch buffers, not a whole-scene resume certificate"
+    },
+    "native_source_workspace": "/tmp/genesis_ipc_303d766-7cb594a23945ca52ccd2ae887",
+    "native_observation_verification": {
+      "verified": true,
+      "native_frame": 8753,
+      "native_dt_s": 0.005,
+      "observed_time_s": 43.76500000000394,
+      "native_soft_body_order": [
+        "bag",
+        "bear"
+      ],
+      "native_q_vs_canonical_minus_origin_max_error_m": 1.1102230246251565e-16,
+      "position_comparison_tolerance_m": 1e-10,
+      "coordinate_conversion": "physics = canonical - origin; only roundoff tolerance allowed",
+      "q_previous_and_velocity_buffers_present": true
+    },
+    "native_workspace_copy": "<original-scene-directory>/runs/paper_09_full_authorized/native_checkpoint/workspace",
+    "native_workspace_file_count": 361,
+    "native_files_copied": 18,
+    "native_workspace_manifest_sha256": "859dcf963045c7c40f0c1c080b48e88b394c655e0998755d156c05b78942e72e",
+    "run_reference_files": {
+      "rest.npz": {
+        "sha256": "ae03719d86553ad3800f8104f64b5435a161e7569f4c186d7a79654904dd1474",
+        "path": "<original-scene-directory>/runs/paper_09_full_authorized/rest.npz"
+      }
+    },
+    "status": "native_and_observation_export_verified_no_restore",
+    "limitations": [
+      "No restoration or resumed-step equivalence test was performed.",
+      "Native dump + robot/controller/coupling observations are preservation evidence, not a certified exact restart.",
+      "Undeclared native/Genesis caches, callbacks, sensor state and Python controller state may remain unexported.",
+      "Archived inputs support replay from the initial state; replay is distinct from resuming this midpoint."
+    ],
+    "record_file_manifest": {
+      "config.json": {
+        "size_bytes": 2547,
+        "sha256": "8860d9aab3ee79d38aa4f1e450ac025a5a8bf92e9f587ba90360222c0d713ee8"
+      },
+      "controller.json": {
+        "size_bytes": 3304,
+        "sha256": "385abf711a594889025b3c416edaa53c49358500f424f6576fa43a20f34d7346"
+      },
+      "controller_state.npz": {
+        "size_bytes": 143915,
+        "sha256": "9e3e13884bbd533426623011c699cb3ff96b59fb578975ccbd818a8e6b04624d"
+      },
+      "coupling_arrays.npz": {
+        "size_bytes": 30086,
+        "sha256": "8fbb975e8b41a75aed0282701f904ebefa15c9a4a181b62a9dbe96151edf38c4"
+      },
+      "native_workspace_manifest.json": {
+        "size_bytes": 64013,
+        "sha256": "859dcf963045c7c40f0c1c080b48e88b394c655e0998755d156c05b78942e72e"
+      },
+      "rigid_solver_arrays.npz": {
+        "size_bytes": 82563,
+        "sha256": "6939ae6012f0893a1f92528c31a990778ae2608e7a873e47017eee2500739858"
+      },
+      "rigid_solver_configs.json": {
+        "size_bytes": 510,
+        "sha256": "bf1c63a120c511bb94b873235a4adbd0c6de1186be5623af24ca9347f50103fa"
+      },
+      "simulator_clocks.json": {
+        "size_bytes": 33,
+        "sha256": "d6c01671db99012ccf230344f4ebb7b2cca4601f81a8bc59401bf531a19b37e4"
+      },
+      "simulator_clocks.npz": {
+        "size_bytes": 208,
+        "sha256": "ba9d916a45abc8706d5292888639b321c3a9f04fb0de591a02906e1b181f5028"
+      },
+      "source_manifest.json": {
+        "size_bytes": 83197,
+        "sha256": "4e3790da551b0924ff1e88e08bcec654c6ae74f1716431c3d7bf0ffeb1f9aafa"
+      }
+    }
+  },
+  "seating_feedback": [
+    {
+      "attempt": 1,
+      "action": "align_held_handle",
+      "body_pose_before": {
+        "rotation": [
+          [
+            -0.14396238625665334,
+            -0.8430329446018766,
+            0.5182376729447401
+          ],
+          [
+            0.9895737326564227,
+            -0.120355455634365,
+            0.07910999896017666
+          ],
+          [
+            -0.004319604116691815,
+            0.5242232526461732,
+            0.8515699163341443
+          ]
+        ],
+        "translation_m": [
+          -0.3465445940384866,
+          -0.011662646857469133,
+          0.7944717207417631
+        ],
+        "rms_residual_m": 0.003931958447501687,
+        "max_residual_m": 0.012116590198345819,
+        "point_count": 885,
+        "singular_values": [
+          9.780558211593133,
+          8.812096103375419,
+          6.04876549604897
+        ],
+        "estimated_up_axis": [
+          0.5182376729447401,
+          0.07910999896017666,
+          0.8515699163341443
+        ],
+        "up_dot_world_up": 0.8515699163341443,
+        "tilt_from_upright_degrees": 31.617165095111286,
+        "method": "Proper least-squares rigid fit of bag body vertices; deformation is reported as residual."
+      },
+      "bottom_gap90_before_m": 0.0968813132039319,
+      "observed_tcp_m": [
+        -0.28001976958082486,
+        -1.7212098054623446e-05,
+        1.1972488219342203
+      ],
+      "ideal_upright_handle_m": [
+        -0.4455028905388595,
+        -0.026059019794576373,
+        1.1302613004357083
+      ],
+      "commanded_tcp_m": [
+        -0.4455028905388595,
+        -0.026059019794576373,
+        1.1302613004357083
+      ],
+      "soft_state_mutated": false
+    },
+    {
+      "attempt": 2,
+      "action": "align_held_handle",
+      "body_pose_before": {
+        "rotation": [
+          [
+            -0.02254508467076108,
+            -0.9988368955545531,
+            0.04262130026327051
+          ],
+          [
+            0.9995358238729708,
+            -0.023393627125635554,
+            -0.01951601917626816
+          ],
+          [
+            0.020490386813575425,
+            0.042161526168420206,
+            0.9989006706171442
+          ]
+        ],
+        "translation_m": [
+          -0.39667257160795133,
+          -0.006052717769660537,
+          0.7448381579103662
+        ],
+        "rms_residual_m": 0.005462373111527535,
+        "max_residual_m": 0.013615458268620487,
+        "point_count": 885,
+        "singular_values": [
+          9.913053883145336,
+          8.82012396347709,
+          5.768035041280138
+        ],
+        "estimated_up_axis": [
+          0.04262130026327051,
+          -0.01951601917626816,
+          0.9989006706171442
+        ],
+        "up_dot_world_up": 0.9989006706171442,
+        "tilt_from_upright_degrees": 2.686837136241969,
+        "method": "Proper least-squares rigid fit of bag body vertices; deformation is reported as residual."
+      },
+      "bottom_gap90_before_m": 0.00956516757699033,
+      "observed_tcp_m": [
+        -0.44551176332109044,
+        -0.026056893284523264,
+        1.1302527173447219
+      ],
+      "ideal_upright_handle_m": [
+        -0.4966471436581889,
+        -0.008307699670221377,
+        1.1302613004357083
+      ],
+      "commanded_tcp_m": [
+        -0.4966471436581889,
+        -0.008307699670221377,
+        1.1302613004357083
+      ],
+      "soft_state_mutated": false
+    }
+  ],
+  "standing_bag_pose": {
+    "rotation": [
+      [
+        -0.03343549714636578,
+        -0.9994407850682457,
+        -0.00042973566873964715
+      ],
+      [
+        0.9994405375624974,
+        -0.03343583729581069,
+        0.0008103462930695233
+      ],
+      [
+        -0.0008242617072227803,
+        -0.0004024009166054401,
+        0.9999995793329819
+      ]
+    ],
+    "translation_m": [
+      -0.397193996858841,
+      -0.00643995179855128,
+      0.7411955499794334
+    ],
+    "rms_residual_m": 0.0008186147213553733,
+    "max_residual_m": 0.0037217640480855015,
+    "point_count": 885,
+    "singular_values": [
+      9.863912359210874,
+      8.813279796009422,
+      5.908280923927317
+    ],
+    "estimated_up_axis": [
+      -0.00042973566873964715,
+      0.0008103462930695233,
+      0.9999995793329819
+    ],
+    "up_dot_world_up": 0.9999995793329819,
+    "tilt_from_upright_degrees": 0.05255413314113446,
+    "method": "Proper least-squares rigid fit of bag body vertices; deformation is reported as residual."
+  },
+  "standing_bottom_gap_90percentile_m": 0.0013032760705949942,
+  "right_grasp_controller": {
+    "finger_kp": 200.0,
+    "finger_kv": 200.0,
+    "force_limit_n": 1.2,
+    "post_close_settle_s": 0.6,
+    "force_proxy_dropout_limit_s": 0.075
+  },
+  "error": "RuntimeError('Physical gate failed [time,volume,bag penetration,bear penetration,stretch,finite] [4.37650000e+01 4.37140303e-02 0.00000000e+00 0.00000000e+00\\n 1.00018382e+00 1.00000000e+00]')",
+  "traceback": "Traceback (most recent call last):\n  File \"<original-scene-directory>/run.py\", line 383, in main\n    exp=Experiment(read_config(a.config),a);exp.run()\n                                            ^^^^^^^^^\n  File \"<original-scene-directory>/run.py\", line 326, in run\n    self.move('right',dest,r,'transport_bear_above_opening',4.)\n  File \"<original-scene-directory>/run.py\", line 199, in move\n    self.execute(plan,label)\n  File \"<original-scene-directory>/run.py\", line 183, in execute\n    self.checkpoint_phase_elapsed_s=float(t);self.step(plan.sample(t))\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<original-scene-directory>/run.py\", line 160, in step\n    self.observe()\n  File \"<original-scene-directory>/run.py\", line 120, in observe\n    raise RuntimeError('Physical gate failed [time,volume,bag penetration,bear penetration,stretch,finite] '+str(row))\nRuntimeError: Physical gate failed [time,volume,bag penetration,bear penetration,stretch,finite] [4.37650000e+01 4.37140303e-02 0.00000000e+00 0.00000000e+00\n 1.00018382e+00 1.00000000e+00]\n",
+  "last_phase": "transport_bear_above_opening",
+  "simulation_time_s": 43.76500000000394,
+  "wall_seconds": 1099.3657313160002,
+  "events": [
+    {
+      "phase": "settle",
+      "time_s": 0.30000000000000016
+    },
+    {
+      "phase": "left_handle_pregrasp",
+      "time_s": 5.404999999999907
+    },
+    {
+      "phase": "left_handle_approach",
+      "time_s": 7.409999999999864
+    },
+    {
+      "phase": "left_handle_close",
+      "time_s": 8.009999999999852
+    },
+    {
+      "phase": "lift_bag",
+      "time_s": 12.02000000000048
+    },
+    {
+      "phase": "upright_bag",
+      "time_s": 16.030000000001095
+    },
+    {
+      "phase": "upright_settle",
+      "time_s": 16.830000000000936
+    },
+    {
+      "phase": "place_bag_on_table",
+      "time_s": 18.835000000000537
+    },
+    {
+      "phase": "bag_standing",
+      "time_s": 19.335000000000438
+    },
+    {
+      "phase": "seat_bag_1",
+      "time_s": 22.33999999999984
+    },
+    {
+      "phase": "seat_settle_1",
+      "time_s": 23.0399999999997
+    },
+    {
+      "phase": "seat_bag_2",
+      "time_s": 26.044999999999103
+    },
+    {
+      "phase": "seat_settle_2",
+      "time_s": 26.744999999998964
+    },
+    {
+      "phase": "bear_pregrasp",
+      "time_s": 30.969999999998123
+    },
+    {
+      "phase": "bear_approach",
+      "time_s": 32.97499999999842
+    },
+    {
+      "phase": "bear_close",
+      "time_s": 33.774999999998826
+    },
+    {
+      "phase": "bear_grasp_settle",
+      "time_s": 34.37499999999913
+    },
+    {
+      "phase": "lift_bear",
+      "time_s": 38.385000000001185
+    }
+  ],
+  "runtime": {
+    "method": "Read-only native frame statistics/status and CUDA allocator counters",
+    "solver_or_physics_parameters_changed": false,
+    "native_backend": "cuda",
+    "sampling_interval_steps": 20,
+    "samples_collected": 437,
+    "retained_record_count": 437,
+    "maximum_retained_records": 2048,
+    "initial_cuda": {
+      "cuda_initialized": true,
+      "device_index": 0,
+      "device_name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "device_free_bytes": 6579093504,
+      "device_total_bytes": 8082096128,
+      "torch_allocated_bytes": 766976,
+      "torch_reserved_bytes": 23068672,
+      "torch_peak_allocated_bytes": 2700288,
+      "scope": "Device-wide free/total plus this process's PyTorch allocator; IPC and graphics allocations are outside PyTorch counters"
+    },
+    "minimum_device_free_bytes": 6217072640,
+    "maximum_torch_allocated_bytes": 675328,
+    "maximum_retained_fem_query_states": 0,
+    "native_engine_error_seen": false,
+    "native_status_changes": 1,
+    "observed_native_steps": 8753,
+    "native_convergence_failure_count": 0,
+    "native_line_search_warning_count": 0,
+    "latest_native_line_search_warnings": [],
+    "convergence_policy": "Require completed, converged, no Newton-limit and no engine errors every step. Record sticky line-search-limit separately: it can occur in an intermediate Newton iteration that subsequently converges. Such warnings are not a claim of exact energy descent.",
+    "latest_native_convergence_failures": [],
+    "peak_observed_native_iteration_counts": {
+      "newton_iterations": 87,
+      "line_search_trials": 535,
+      "linear_solver_iterations": 3375
+    },
+    "jsonl_path": "<original-scene-directory>/runs/paper_09_full_authorized/runtime.jsonl",
+    "limitations": [
+      "Native convergence covers each distinct step where sample() is called; invoke it after every step for complete coverage",
+      "scene_step timing excludes observations, camera rendering, video encoding and motion planning",
+      "CUDA allocator queries do not measure GPU utilization or attribute device-wide memory to this process"
+    ]
+  },
+  "actual_max_joint_speed_rad_s": 0.649220312263051,
+  "actual_min_sampled_rigid_clearance_m": 0.012268933167877139,
+  "public_copy_note": "Summary copy; full original report and all sampled records are in the release archive."
+}

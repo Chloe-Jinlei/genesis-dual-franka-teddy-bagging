@@ -1,0 +1,65 @@
+{
+  "head": {
+    "argv": [
+      "git",
+      "-C",
+      "<original-workspace>/genesis-world",
+      "rev-parse",
+      "HEAD"
+    ],
+    "returncode": 0,
+    "stdout": "ffd119c30118ebb9745fc009349efb2112a8cb76\n",
+    "stderr": ""
+  },
+  "status": {
+    "argv": [
+      "git",
+      "-C",
+      "<original-workspace>/genesis-world",
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "working_tree_diff_from_head": {
+    "argv": [
+      "git",
+      "-C",
+      "<original-workspace>/genesis-world",
+      "diff",
+      "--binary",
+      "HEAD"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "staged_diff": {
+    "argv": [
+      "git",
+      "-C",
+      "<original-workspace>/genesis-world",
+      "diff",
+      "--binary",
+      "--cached"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "submodules": {
+    "argv": [
+      "git",
+      "-C",
+      "<original-workspace>/genesis-world",
+      "submodule",
+      "status"
+    ],
+    "returncode": 0,
+    "stdout": "-d32b0867a84cdc798219cf5e1933c8385c47678b doc\n-ac034080af1f537f4243bfa4914dd27adbca3589 genesis/ext/LuisaRender\n-006bb10c78f9688a26ed7f7d39da24a3be8c6f8a genesis/ext/ParticleMesher\n",
+    "stderr": ""
+  }
+}

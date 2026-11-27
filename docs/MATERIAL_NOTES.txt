@@ -1,0 +1,68 @@
+牛皮纸袋材料与接触模型说明
+核对日期：2026-11-26
+
+本场景使用可变形薄壳纸袋，既不是刚体盒子，也不是把塑料薄膜改成棕色。
+纸袋是制造后已成形、敞口的长方体壳体，初始旋转后侧躺在桌面；这不等同于
+完全压扁的折叠纸袋。弯曲参考角来自初始制造形状，未设置固定软体节点。
+
+默认工程参数（均未对图片中的实物做实验标定）
+  等效各向同性杨氏模量 E：800 MPa
+  泊松比 nu：0.30
+  密度 rho：800 kg/m³
+  纸张全厚度 t：0.250 mm
+  由 rho*t 算得面密度：200 g/m²
+  IPC 输入 thickness：0.125 mm（单侧接触半厚度，不是全厚度）
+  弯曲刚度 D=E*t³/[12*(1-nu²)]：0.0011446886446886447 N·m
+  平面应力 lambda：263736263.73626372 Pa
+  平面应力 mu：307692307.6923077 Pa
+
+这些数值是一个较厚纸袋的初始工程假设，不是从图片反推的测量值，也不是
+下面文献产品的完整参数复刻。E、nu、摩擦系数均需实物标定；纸张的面内
+拉伸模量与弯曲模量可能并不满足均质各向同性板的单一 E 关系。
+最终实际参数与质量以每次运行的 config.json 和 native readback 为准。
+
+实现
+  使用 Genesis 1.4.3 的 FEM.Cloth 表面网格接口，在当前场景 build 前选择
+  pyuipc 0.0.29 原生 NeoHookeanShell（UID 11）与 DiscreteShellBending
+  （UID 17）。不改安装目录，不在运行时写软体位置，不添加理想抓取粘结。
+  native readback 会检查质量、半厚度、拉梅参数、弯曲系数和全部节点自由。
+  熊仍使用原生 StableNeoHookean 体积材料。其填充物与外皮合并为均质软体，
+  不能视作已辨识的真实毛绒玩具材料。
+  提带使用与袋体相同的薄壳纸条；不是图片中捻绳提手的微观结构模型。
+  抓持依赖有限电机推力、IPC 接触和摩擦；两向耦合反作用回馈给机械臂。
+
+明确限制
+  模型不含纸纤维纵横向正交各向异性、湿度依赖、裂纹/撕裂、胶缝脱粘、
+  塑性屈服、新的永久折痕、黏弹性、实测阻尼、空气压力或提手增强片。
+  本机原生库虽提供 StrainPlasticDiscreteShellBending（UID 31）及
+  StressPlasticDiscreteShellBending（UID 32），但没有对应实物的屈服与
+  硬化数据，当前未加入未经验证的塑性参数。
+  默认 Genesis 的布壳实际使用 StrainLimitingBaraffWitkinShell；该接口
+  文档中的 NeoHookeanShell 描述与代码不一致。本文件显式选择并读回 UID。
+  必须检查真实动态运行才能判断抓带、竖袋、抓熊、放入及最终稳定性。
+  材料 CPU 检查通过不等于整个任务完成。
+
+已访问的第一手参考（用于说明假设和材料局限，不声称这些来源验证上述 E）
+1. Billerud, Handbook for Sack Kraft Papers and Paper Sacks, 2025 版，
+   第 10、14、16 页。厂商明确区分纸张的机器方向 MD 与横向 CD，说明纸张
+   性能随湿度变化，摩擦也受表面处理与搬运影响。因而当前各向同性、恒定
+   摩擦模型只能视作干态等效近似。
+   https://www.billerud.com/globalassets/billerud/packaging-materials/sack-paper/sack-handbook-251218.pdf
+2. Suryadi, G. S. & Susiani (2024), Analisis Sifat Fisik dan Mekanik Brown Kraft
+   Paper Sebagai Material Kemasan Ramah Lingkungan，原始研究，
+   DOI 10.31004/innovative.v4i4.14922。研究包含 200 g/m² 牛皮纸，并分别检验
+   MD/CD 性能，报告不同克重对应的厚度及力学差异。该事实支持将克重与
+   各向异性作为需要核对的参数，不能用它宣称当前参数已标定。
+   https://j-innovative.org/index.php/Innovative/article/view/14922
+
+本地 API 依据
+  ../genesis-world/genesis/engine/couplers/ipc_coupler/coupler.py
+  ../teddy_bag_scene/vendor/uipc/_native/pyuipc/constitution.pyi
+  ../teddy_plastic_gpu_20261126/physics_config.py
+
+本次不启动 GPU 的独立核对
+  用原生 4 点 2 三角形薄壳验证全部 11 项材料读回，均通过。
+  50 组随机目标/仿射变换，300 个平移/旋转方向的有限差分验证 STC 回馈：
+  最大力/力矩绝对误差 2.604370941128309e-9。力矩参考点与 Genesis
+  apply_links_external_wrench 的默认 link_origin 一致。
+  这只检验公式/API 一致性，不验证数值积分精度、夹持成功或材料真实性。

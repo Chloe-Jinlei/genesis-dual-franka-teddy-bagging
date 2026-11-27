@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-11-27T02:16:28.846183+00:00",
+  "simulation_started": false,
+  "source_runs": [
+    "<original-scene-directory>/runs/paper_09_full_authorized",
+    "<original-scene-directory>/runs/paper_11_direct_release"
+  ],
+  "seam_at_video_seconds": 45.6,
+  "seam_physics_time_seconds": 43.765,
+  "video_stage_captions": [
+    [
+      0.0,
+      0.5,
+      "初始状态：熊与开口纸袋平躺在桌面"
+    ],
+    [
+      0.5,
+      8.5,
+      "左臂接近并夹住纸袋的一条提手"
+    ],
+    [
+      8.5,
+      17.6,
+      "左臂提起纸袋，并转至竖直方向"
+    ],
+    [
+      17.6,
+      28.1,
+      "调整袋底位置，纸袋竖放在桌面"
+    ],
+    [
+      28.1,
+      36.1,
+      "右臂接近玩具熊并夹住"
+    ],
+    [
+      36.1,
+      40.2,
+      "右臂提起玩具熊"
+    ],
+    [
+      40.2,
+      45.6,
+      "将熊移到袋口上方"
+    ],
+    [
+      45.6,
+      46.6,
+      "恢复保存状态后，右夹爪直接松开"
+    ],
+    [
+      46.6,
+      49.8,
+      "熊自由下落入袋；左臂继续扶住提手"
+    ],
+    [
+      49.8,
+      54.8,
+      "最终保存位置：透明袋壁仅用于查看内部"
+    ]
+  ],
+  "release_completed": true,
+  "full_physical_task_validated": false,
+  "video": "<original-scene-directory>/deliverables/full_result/full_process.mp4",
+  "full_scene_backup": "<original-scene-directory>_saved_20261127T020453Z.tar.gz",
+  "source_sha256": {
+    "<original-scene-directory>/runs/paper_09_full_authorized/simulation.mp4": "2b0f3d0af4b487ae191e81848d7d5661e1e6438d11a5d9206181d7ee600b0589",
+    "<original-scene-directory>/runs/paper_11_direct_release/simulation.mp4": "fcddf962fcd9735377b9f77c55edc05013636b5e1e7cb39145b5b7a5cbc2488f",
+    "<original-scene-directory>/runs/paper_11_direct_release/diagnostic_transparent_saved.png": "f8c05b8f9315285cf30b8d10bf785f29091048ca817dfbd54fa017e28a7f323b",
+    "<original-scene-directory>_saved_20261127T020453Z.tar.gz": "7cfc1899c5d042ece8fd992b363f856480ad191b0d9f3175c845b7425a093448"
+  }
+}

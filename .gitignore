@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.cache/
+vendor/
+runs/
+preservation/
+deliverables/
+*.tar.gz
+*.zip
+.env
+.env.*

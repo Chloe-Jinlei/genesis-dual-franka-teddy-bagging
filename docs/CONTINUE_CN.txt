@@ -1,0 +1,122 @@
+最新进展：已执行保存状态恢复后的直接松手，熊已落入袋内。详情见 RELEASE_RESULT_CN.txt。
+释放过程中出现局部网格翻转，未将旧全流程失败改为成功；下文是先前阶段的历史说明。
+
+本地纸袋与软体熊场景：保存与后续继续
+
+本目录是本次独立重建的纸袋场景。已有布袋、塑料袋和原始运行记录没有被覆盖。
+最终是否完成装袋，必须以本目录相应 runs/运行名/report.json、validation.json、
+原生求解记录和连续视频为准。静态几何正确、单独提袋成功或已保存检查点，均不
+代表完整装袋成功；旧场景的成功结果也不能代替此次验证。
+
+本次用户计算预算
+  原预算记录：仿真计划于 2026-11-27 01:44:00 UTC 前停止，所有计算原定最迟
+  于 01:48:14 UTC 停止。这些时间保留为历史记录。
+  用户随后明确要求：“把这次全流程跑完再停止，并且保存进度，然后输出结果”。
+  budget.json 的 latest_user_override 保存了该指令及范围：只完成一次物理
+  参数不变的全流程尝试；该次尝试完成或出现明确仿真失败后，停止、保存并报告。
+  这一指令仅对该次尝试替代原墙钟截止时间，不授权持续调参或追加试跑。
+  paper_08_full_final 仍受先前已设置的内部/外部超时影响，已停止并保存；使用
+  相同参数启动的替代运行是 paper_09_full_authorized。这是新的连续初始状态
+  运行，不是从第 08 次检查点精确续算。第 09 次结束后只归档，不再启动试验。
+  preserve.py 从 budget.json 读取当前指令，同时保留原预算历史，不把原截止
+  时间误写成这一次授权运行仍受约束的有效截止时间。
+
+当前可支持的继续方式
+  支持：使用保留的输入，从初始状态重新运行，选择从未使用过的输出名称。
+  尚不支持：从中间检查点经过验证的精确续算。
+
+程序可保存原生 IPC 工作区、软体/刚体观测、控制目标与活动计划。现有检查点
+工具是导出器，restore_implemented=false、exact_resume_certified=false。
+即使位置能读回，接触历史、求解器状态及刚柔耦合状态也不能据此宣称精确恢复。
+不得把不同运行、近似恢复或拼接视频当作一次连续成功仿真。
+
+本机重新运行
+  cd <original-scene-directory>
+  ./run.sh --headless --config config.json --task full --output rerun_new_001 --wall-seconds 1800
+
+以上 1800 秒只是未来重新授权预算内的示例上限，不构成现在继续计算的授权。
+有窗口时用 --viewer 替代 --headless。任务支持 settle、lift、upright、
+bear_grasp、full；bear_grasp 只是单独诊断熊的抓取，不是完整装袋任务。
+具体参数以运行时 run.py --help 为准。新配置和代码需要新一轮完整原生验证。
+
+运行依赖
+  本机 Python：../.venv/bin/python
+  Genesis 源码：../genesis-world
+  原生 IPC：本目录 vendor（本机可能是符号链接）
+  Franka 网格：assets/franka_meshes（本机可能是符号链接）
+  GPU：CUDA 与兼容的 NVIDIA 驱动；无 CPU 回退。
+
+preserve.py 的作用
+  该工具只保存文件和环境，不推进仿真，不载入或恢复原生场景。
+  默认要求本场景 run.py 进程已经退出；不会终止其他任务或修改安装环境。
+  它记录 Python/包版本、Torch CUDA 构建、GPU/驱动、Genesis HEAD、工作树状态、
+  从 HEAD 的完整二进制 diff、暂存区 diff，并包含实际 Genesis 工作源码。
+  场景输入、输出、日志、视频、原生检查点全部归档；vendor 和 Franka 网格链接
+  在归档中解析成真实文件。内容相同的文件使用归档内部硬链接去重。
+  不复制约 9 GB 的虚拟环境，不复制无关历史场景、.git 数据库或可重建缓存。
+  完整依赖目录的来源会记录在 source_symlinks.json，不会伪装成无需依赖的代码。
+
+最终保存（先确保仿真已停止，并且仍在用户授权的保存时间内）
+  ../.venv/bin/python preserve.py
+
+可指定新的外部归档路径；已存在归档不会覆盖：
+  ../.venv/bin/python preserve.py --archive ../paper_bag_saved_final.tar.gz
+
+仅记录小型环境资料，不创建归档：
+  ../.venv/bin/python preserve.py --metadata-only
+
+每次保存生成 preservation/UTC时间/ 下的环境、锁定版本与文件哈希清单。
+归档默认保存在场景目录外，同时生成 .sha256 和 .verification.json。
+工具完整重新读取归档，逐项对照 SHA-256；若失败则保留 .partial 文件，不把失败
+归档称为完整备份。归档内的 file_manifest.json 不包含自身哈希；外部验证记录
+会检查它，并提供整个归档的哈希。
+
+恢复文件与依赖
+  在新目录解压，避免覆盖现有输入及运行记录。归档含独立 vendor、Franka 网格、
+  场景资源和 preserved_runtime/genesis-world 源码；不依赖原场景的这两个符号链接。
+  本机可以继续使用保留的 ../.venv；移至其他路径时，先按记录创建兼容 Python
+  环境，安装 preservation/时间/requirements.lock.txt 的版本，再从归档的实际
+  Genesis 源码安装。Torch 必须匹配 runtime_environment.json 记录的 CUDA 构建；
+  仅包版本相同不能证明 CPU/CUDA 构建一致。原生 vendor 还受 Python ABI、系统
+  glibc 和 NVIDIA 驱动兼容条件约束。
+  run.sh 默认使用父目录 .venv，因此异地恢复需将兼容环境放在该位置，或显式
+  使用正确 Python、PYTHONPATH=本目录/vendor 运行 run.py。
+  实际运动规划器读取本目录 assets/panda_tactile.xml；XML 中的 franka_meshes
+  是相对路径。motion.py 中指向父目录 genesis-world 的 ASSET 常量未被调用，
+  不是当前执行依赖。归档的 Genesis 源码位置是本目录内的
+  preserved_runtime/genesis-world；安装时应明确使用这个位置，而不是假设存在
+  ../genesis-world。安装后应核对 genesis.__file__ 确实指向这份恢复源码，避免
+  原虚拟环境中的 editable 安装仍指向旧绝对路径。
+  移动到其他机器时，不能通过简单复制或移动旧 .venv 保证解释器仍然可用；应
+  重建相同 Python 3.12 环境并安装依赖。requirements.lock.txt 中的 Torch
+  元数据版本可能不含 +cu130，必须同时按 runtime_environment.json 检查实际
+  torch.__version__ 与 torch.version.cuda。
+  这不是离线 wheelhouse 或已验证的跨机器安装包；所有包的版本被记录，但没有
+  声称已完成全量安装轮子的哈希锁定、干净机器复现或中途精确续算。
+
+历史运行的重放与保存工具范围
+  本目录的活动代码可能已在某次运行后修订；若要重放某次历史尝试，应把对应
+  runs/运行名/source 复制到一个全新的工作目录，并复制同级 config.json，
+  使用正确 Python 和该副本 vendor 运行。不要在原冻结 source 目录中写入
+  新运行，不要把活动代码加旧配置误称为当时版本的精确重放。
+  运行目录中的原始报告、记录哈希和绝对来源路径保留原文；解析后的归档文件
+  与它们之间的关系由 preservation/时间/source_symlinks.json 和
+  file_manifest.json 说明，不会改写旧证据以伪造路径一致。
+  某些早期原生检查点可能在保存 native 工作区及控制器后，因冻结 source
+  内含 vendor 符号链接而将导出标记为 export_incomplete。遇到这种记录，应
+  保留该失败状态；最终归档能够解析并保存依赖，并不追溯证明检查点导出成功。
+  后续代码改为将 vendor 实体文件复制到冻结输入。paper_05_full 的 settle
+  检查点已独立读回确认 success=true（0.300 秒、第 60 步，source_manifest
+  存在且 vendor 不是符号链接）。这不改变早期 success=false 的历史导出，
+  也不代表完整任务成功；每个阶段和最终导出仍须以各自 report.json 为准。
+  preserve.py 本次入口依赖原机器 ../genesis-world 的 git 工作树，以便保存
+  HEAD 和 diff。归档提供实际源码和这些 git 记录，但没有整个 .git 数据库；
+  因此恢复文件后不能直接假设同一个保存入口仍可再次调用。重复打包须另行
+  处理源码来源记录，或使用通用归档工具保留原 manifest；这不影响从初始状态
+  运行恢复后的场景。
+
+后续开发优先顺序
+  先读最后一次运行报告与停止原因，再决定修改；保留失败数据，不改写成功标记。
+  涉及模型、材料或动作的修改，需要从初始状态完整复跑。
+  若实现中途恢复，应单独验证刚体、软体、控制器、原生接触历史及确定性续算；
+  在这些检查通过以前，检查点只能作为诊断与开发资料。
