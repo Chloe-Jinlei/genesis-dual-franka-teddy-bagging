@@ -1,0 +1,305 @@
+{
+  "status": "rendered_unstepped_initial_state",
+  "renderer": "Native Genesis camera RGB output",
+  "simulation_time_before_s": 0.0,
+  "simulation_time_after_s": 0.0,
+  "simulation_steps_before": [
+    0
+  ],
+  "simulation_steps_after": [
+    0
+  ],
+  "physics_steps_executed_by_this_helper": 0,
+  "physical_entity_mutations_by_this_helper": 0,
+  "image_postprocessing": "None; lossless PNG encoding only",
+  "coordinate_frame": {
+    "enabled": true,
+    "physics_origin_m": [
+      -0.1,
+      0.0,
+      0.9
+    ],
+    "mapping": "physics_position = canonical_world_position - physics_origin_m",
+    "planning_and_saved_observations": "canonical world coordinates",
+    "rotations_forces_local_geometry_and_materials_changed": false,
+    "runtime_state_repositioning": false
+  },
+  "images": [
+    {
+      "file": "initial_01_oblique.png",
+      "sha256": "015313f647822cd44838b9c2835f7613314ab706540d14056c077e222f3a3b01",
+      "width_px": 1600,
+      "height_px": 1200,
+      "camera": {
+        "model": "pinhole",
+        "position_m": [
+          1.9,
+          -2.25,
+          1.95
+        ],
+        "lookat_m": [
+          0.0,
+          0.0,
+          0.96
+        ],
+        "up": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "vertical_fov_degrees": 42.0
+      }
+    },
+    {
+      "file": "initial_02_front_close.png",
+      "sha256": "093fa2fe7e667282a355a4cee811e097da58b7009d89cf00629e04f28138eaea",
+      "width_px": 1600,
+      "height_px": 1200,
+      "camera": {
+        "model": "pinhole",
+        "position_m": [
+          0.15,
+          -1.8,
+          1.65
+        ],
+        "lookat_m": [
+          -0.03,
+          0.0,
+          1.08
+        ],
+        "up": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "vertical_fov_degrees": 42.0
+      }
+    },
+    {
+      "file": "initial_03_top.png",
+      "sha256": "17551a07575472efe2887e8fef86d1588ba6a5fd9996f4376071fa9057db5827",
+      "width_px": 1600,
+      "height_px": 1200,
+      "camera": {
+        "model": "pinhole",
+        "position_m": [
+          0.0,
+          0.0,
+          3.15
+        ],
+        "lookat_m": [
+          0.0,
+          0.0,
+          0.74
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "vertical_fov_degrees": 42.0
+      }
+    },
+    {
+      "file": "initial_04_opposite_front.png",
+      "sha256": "978dc0172ac7ccf0d43ac49b16b83a5f835d84e149e69e86fdea52eca2d63190",
+      "width_px": 1600,
+      "height_px": 1200,
+      "camera": {
+        "model": "pinhole",
+        "position_m": [
+          0.0,
+          2.4,
+          1.85
+        ],
+        "lookat_m": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "up": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "vertical_fov_degrees": 42.0
+      }
+    }
+  ],
+  "config_sha256_canonical_json": "208cc2586d85f19b86c0d339c5919a5f815548bf9be11f9748eeef542c9522ef",
+  "config": {
+    "seed": 17,
+    "simulation": {
+      "dt": 0.005,
+      "substeps": 1,
+      "precision": "64",
+      "contact_distance": 0.001,
+      "contact_resistance": 10000000.0,
+      "correct_stc_reaction": true,
+      "backend": "cuda",
+      "material_model": "NeoHookeanShell",
+      "line_search_iterations": 32,
+      "ipc_fem_preconditioner": "mas",
+      "physics_origin_m": [
+        -0.1,
+        0,
+        0.9
+      ]
+    },
+    "table": {
+      "height": 0.74,
+      "size": [
+        1.7,
+        1.2,
+        0.06
+      ]
+    },
+    "robots": {
+      "left_base": [
+        -0.6,
+        -0.28,
+        0.76
+      ],
+      "right_base": [
+        0.28,
+        0.2,
+        0.76
+      ],
+      "left_yaw": 0.35,
+      "right_yaw": -2.4,
+      "home": [
+        0.0,
+        -0.45,
+        0.0,
+        -2.15,
+        0.0,
+        1.7,
+        0.7854
+      ],
+      "finger_force_limit": 12.0,
+      "finger_kp": 8000.0,
+      "finger_kv": 200.0
+    },
+    "bag": {
+      "position": [
+        -0.18,
+        0.22,
+        0.742
+      ],
+      "E": 800000000.0,
+      "nu": 0.3,
+      "rho": 800.0,
+      "thickness": 0.000125,
+      "bending_stiffness": 0.0011446886446886447,
+      "friction_mu": 0.45,
+      "mesh": "paper_bag.obj",
+      "height_m": 0.3
+    },
+    "bear": {
+      "position": [
+        0.27,
+        -0.25,
+        0.742
+      ],
+      "E": 18000.0,
+      "nu": 0.28,
+      "rho": 100.0,
+      "friction_mu": 0.65,
+      "mesh": "bear_uniform_coarse_s663.obj",
+      "nobisect": true,
+      "mindihedral": 15,
+      "minratio": 1.3,
+      "maxvolume": 1.1657369879999996e-06
+    },
+    "camera": {
+      "position": [
+        1.6,
+        -1.9,
+        1.8
+      ],
+      "lookat": [
+        0.0,
+        0.0,
+        0.97
+      ],
+      "fov": 42
+    },
+    "task": {
+      "bear_grasp_local": [
+        0.05304,
+        -0.009282,
+        0.022542
+      ],
+      "bear_finger_force_limit": 1.2,
+      "handle_force_limit": 8.0,
+      "upright_handle_target": [
+        -0.28,
+        0,
+        1.27
+      ],
+      "upright_rotation_xyzw": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0,
+        0
+      ],
+      "lift_handle_height": 1.27,
+      "bear_finger_kp": 200.0,
+      "bear_finger_kv": 200.0,
+      "bear_close_duration_s": 0.8,
+      "bear_grasp_settle_s": 0.6,
+      "force_proxy_dropout_limit_s": 0.075
+    },
+    "appearance": {
+      "bag_color": [
+        0.61,
+        0.39,
+        0.2,
+        1.0
+      ],
+      "bag_opacity": 1.0
+    },
+    "material_reference": {
+      "material": "uncalibrated effective isotropic kraft paper",
+      "full_thickness_m": 0.00025,
+      "areal_density_kg_m2": 0.2,
+      "young_modulus_pa": 800000000.0,
+      "scope": "Elastic shell; no plastic creases, tearing or orthotropy. See MATERIAL_NOTES.txt."
+    }
+  },
+  "camera_preset_source": "Same four canonical-world camera presets as the prior cloth/plastic bag demos",
+  "genesis_version": "1.4.3",
+  "genesis_backend": "cuda",
+  "gpu_device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+  "robot_initial_dofs": {
+    "left": [
+      0.0,
+      -0.45,
+      0.0,
+      -2.15,
+      0.0,
+      1.7,
+      0.7854,
+      0.04,
+      0.04
+    ],
+    "right": [
+      0.0,
+      -0.45,
+      0.0,
+      -2.15,
+      0.0,
+      1.7,
+      0.7854,
+      0.04,
+      0.04
+    ]
+  },
+  "saved_initial_geometry_comparison": {
+    "reference_file": "rest.npz",
+    "maximum_vertex_coordinate_error_m": {
+      "bag": 0.0,
+      "bear": 0.0
+    }
+  }
+}

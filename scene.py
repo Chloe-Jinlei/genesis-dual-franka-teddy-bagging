@@ -20,7 +20,8 @@ def read_config(path=None):
     return json.loads(Path(path or HERE / "config.json").read_text())
 
 
-def build(config, *, viewer=False, width=960, height=720, robots=True, initial_q=None):
+def build(config, *, viewer=False, width=960, height=720, robots=True, initial_q=None,
+          initial_views=False):
     if not torch.cuda.is_available():
         raise RuntimeError("CUDA GPU is required for this scene; CPU fallback is disabled")
     print("GPU_DEVICE " + torch.cuda.get_device_name(0), flush=True)
@@ -103,6 +104,9 @@ def build(config, *, viewer=False, width=960, height=720, robots=True, initial_q
         "detail":scene.add_camera(res=(width,height), GUI=False, pos=frame.points_to_physics((.7,-1.05,1.9)),
             lookat=frame.points_to_physics((-.02,-.04,1.0)), fov=43),
     }
+    if initial_views:
+        from initial_views import add_initial_cameras
+        cameras.update(add_initial_cameras(scene))
     from physics_config import initialize_before_ipc, install_exact_stc_feedback, install_rigid_collision_fallback
     from paper_shell import configure_paper_shell
     initial_q = initial_q or {s:np.r_[config["robots"]["home"],.04,.04] for s in arms}

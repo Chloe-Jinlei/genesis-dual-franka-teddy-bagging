@@ -8,6 +8,26 @@
 
 [查看完整过程 MP4](media/full_process.mp4) · [最终场景](media/final_scene.png) · [袋内位置诊断图](media/final_inside_bag.png) · [v0.1.0 数据归档](https://github.com/Chloe-Jinlei/genesis-dual-franka-teddy-bagging/releases/tag/v0.1.0)
 
+## 四个初始视角
+
+沿用之前 demo 的四组相机参数，展示本次纸袋场景的 **t=0 初始状态**。四张都是 Genesis 原生 RGB 渲染、1600×1200 PNG；相机视场角均为 42°，没有裁剪、合成或图像修饰。此次仅创建初始场景并渲染，物理步数为 0；纸袋和熊的顶点位置与 `paper_09_full_authorized/rest.npz` 完全一致。
+
+| 01 斜视全景 | 02 正面近景 |
+| --- | --- |
+| [![斜视全景](media/initial_views/initial_01_oblique.png)](media/initial_views/initial_01_oblique.png) | [![正面近景](media/initial_views/initial_02_front_close.png)](media/initial_views/initial_02_front_close.png) |
+| **03 俯视** | **04 对侧正面** |
+| [![俯视](media/initial_views/initial_03_top.png)](media/initial_views/initial_03_top.png) | [![对侧正面](media/initial_views/initial_04_opposite_front.png)](media/initial_views/initial_04_opposite_front.png) |
+
+[四张原图和相机记录](media/initial_views/) · [下载四视角补充包](https://github.com/Chloe-Jinlei/genesis-dual-franka-teddy-bagging/releases/download/v0.1.0/initial_views.zip) · [相机参数、校验值与零步渲染记录](media/initial_views/initial_views.json)
+
+在下文所述依赖准备好后，可单独渲染到新目录：
+
+```bash
+PYTHONPATH="$PWD/vendor" ../.venv/bin/python render_initial_views.py --output new_initial_views
+```
+
+此入口只构建初始场景并输出四张图，不会执行运动流程。新加入的相机选项默认关闭，原有运动入口行为不变。Release 原始 `complete_result_bundle.zip` 保留发布时内容；四张新增图片及其渲染入口位于独立的 `initial_views.zip` 补充包和当前仓库。
+
 ## 视频与实际完成动作
 
 录像约 55 秒，由两段已有仿真记录和最终位置展示组成。**视频 45.6 秒处是保存状态恢复后的衔接点。** 视频时间包含阶段停留画面，与物理时间并非逐秒相同。
@@ -46,7 +66,7 @@
 | `run.py`、`run.sh`、其他根目录 Python 文件 | 场景、运动控制、验证、状态保存与结果整理代码 |
 | `release_saved.py`、`restore_rigid_state.py` | 本次保存状态恢复与直接释放的开发实现；不是通用或已认证的精确续算接口 |
 | `config.json`、`assets/` | 场景参数、纸袋与熊网格、机器人资源 |
-| `media/` | 合成过程录像与三张结果图片 |
+| `media/` | 合成过程录像、四个初始视角、原初始细节图与两张最终结果图 |
 | `results/` | 原运行、直接释放及恢复核对报告 |
 | `docs/` | 材料、保存、后续运行与结果说明 |
 | `requirements.lock.txt` | 已观察到的 Python 包版本清单，不是 wheel 哈希锁定文件 |
